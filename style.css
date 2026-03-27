@@ -1245,3 +1245,1250 @@ body {
             transform: translateY(-5px);
             border-color: #ffd700;
         }
+/* === ОСНОВНЫЕ СТИЛИ === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* === ШАПКА САЙТА === */
+.header {
+    padding: 20px 40px;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+}
+
+/* === ОСНОВНОЙ КОНТЕНТ === */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* === ЗАГОЛОВОК ПО ЦЕНТРУ === */
+.main-title {
+    text-align: center;
+    color: white;
+    font-size: 42px;
+    margin: 40px 0 60px 0;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* === КОНТЕЙНЕР ДЛЯ КНОПОК === */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 40px 0 80px 0;
+    flex-wrap: wrap;
+}
+
+/* === СТИЛИ КНОПОК === */
+.task-button {
+    padding: 30px 60px;
+    font-size: 36px;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #667eea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 3px solid transparent;
+    min-width: 300px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.task-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-color: #ffd700;
+    background: #f8f9fa;
+}
+
+.task-button:active {
+    transform: translateY(-5px);
+}
+
+/* === СЕКЦИЯ "О НАС" === */
+.about-section {
+    background: white;
+    border-radius: 50px 50px 0 0;
+    padding: 60px 40px;
+    margin-top: 100px;
+    text-align: center;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+}
+
+.about-title {
+    font-size: 72px;
+    font-weight: 800;
+    color: #667eea;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(102, 126, 234, 0.2);
+    letter-spacing: 4px;
+}
+
+.about-text {
+    font-size: 28px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-weight: 400;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 30px;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ === */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .site-title {
+        font-size: 20px;
+    }
+
+    .main-title {
+        font-size: 28px;
+        margin: 20px 0 30px 0;
+    }
+
+    .task-button {
+        padding: 20px 40px;
+        font-size: 28px;
+        min-width: 250px;
+    }
+
+    .about-title {
+        font-size: 48px;
+    }
+
+    .about-text {
+        font-size: 20px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 24px;
+    }
+
+    .task-button {
+        padding: 15px 30px;
+        font-size: 24px;
+        min-width: 200px;
+    }
+
+    .about-title {
+        font-size: 36px;
+    }
+
+    .about-text {
+        font-size: 18px;
+    }
+}
+    /* Дополнительные стили только для этой страницы */
+        .back-button {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 24px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+        }
+        
+        .task-content {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .task-number {
+            font-size: 48px;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .task-description {
+            font-size: 24px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .placeholder-text {
+            font-size: 20px;
+            color: #888;
+            font-style: italic;
+            padding: 60px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px dashed #667eea;
+        }
+        /* === ОСНОВНЫЕ СТИЛИ === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* === ШАПКА САЙТА === */
+.header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+}
+
+/* === КНОПКА СПРАВОЧНЫХ МАТЕРИАЛОВ === */
+.ref-button {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 2px solid transparent;
+}
+
+.ref-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    border-color: #ffd700;
+}
+
+/* === ОСНОВНОЙ КОНТЕНТ === */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* === ЗАГОЛОВОК ПО ЦЕНТРУ === */
+.main-title {
+    text-align: center;
+    color: white;
+    font-size: 42px;
+    margin: 40px 0 60px 0;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* === КОНТЕЙНЕР ДЛЯ КНОПОК === */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 40px 0 80px 0;
+    flex-wrap: wrap;
+}
+
+/* === СТИЛИ КНОПОК === */
+.task-button {
+    padding: 30px 60px;
+    font-size: 36px;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #667eea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 3px solid transparent;
+    min-width: 300px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.task-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-color: #ffd700;
+    background: #f8f9fa;
+}
+
+.task-button:active {
+    transform: translateY(-5px);
+}
+
+/* === СЕКЦИЯ "О НАС" === */
+.about-section {
+    background: white;
+    border-radius: 50px 50px 0 0;
+    padding: 60px 40px;
+    margin-top: 100px;
+    text-align: center;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+}
+
+.about-title {
+    font-size: 72px;
+    font-weight: 800;
+    color: #667eea;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(102, 126, 234, 0.2);
+    letter-spacing: 4px;
+}
+
+.about-text {
+    font-size: 28px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-weight: 400;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 30px;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* === МОДАЛЬНОЕ ОКНО ДЛЯ СПРАВОЧНЫХ МАТЕРИАЛОВ === */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: white;
+    margin: 50px auto;
+    padding: 30px;
+    max-width: 1000px;
+    border-radius: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #667eea;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f0f0f0;
+}
+
+.close-button:hover {
+    color: #764ba2;
+    background: #e0e0e0;
+}
+
+.ref-title {
+    font-size: 36px;
+    color: #667eea;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.ref-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 20px;
+}
+
+.ref-section h3 {
+    font-size: 24px;
+    color: #764ba2;
+    margin-bottom: 15px;
+}
+
+.ref-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.ref-formula {
+    font-size: 22px;
+    font-weight: 600;
+    color: #667eea;
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.square-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.square-table th, .square-table td {
+    border: 2px solid #667eea;
+    padding: 10px;
+    text-align: center;
+}
+
+.square-table th {
+    background: #667eea;
+    color: white;
+    font-weight: 600;
+}
+
+.square-table td {
+    background: white;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .site-title {
+        font-size: 20px;
+    }
+    
+    .ref-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .main-title {
+        font-size: 28px;
+        margin: 20px 0 30px 0;
+    }
+
+    .task-button {
+        padding: 20px 40px;
+        font-size: 28px;
+        min-width: 250px;
+    }
+
+    .about-title {
+        font-size: 48px;
+    }
+
+    .about-text {
+        font-size: 20px;
+        padding: 15px;
+    }
+    
+    .modal-content {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .ref-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 24px;
+    }
+
+    .task-button {
+        padding: 15px 30px;
+        font-size: 24px;
+        min-width: 200px;
+    }
+
+    .about-title {
+        font-size: 36px;
+    }
+
+    .about-text {
+        font-size: 18px;
+    }
+}
+/* === КНОПКА СПРАВОЧНЫХ МАТЕРИАЛОВ === */
+.ref-button {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 2px solid transparent;
+}
+ /* Дополнительные стили для страницы задания */
+        .instruction-section {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .instruction-title {
+            font-size: 36px;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+        }
+        
+        .instruction-block {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .instruction-block h3 {
+            font-size: 28px;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+        
+        .instruction-text {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .example-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px dashed #667eea;
+        }
+        
+        .example-box p {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .example-box .formula {
+            font-size: 24px;
+            color: #667eea;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px;
+            background: #f0f4ff;
+            border-radius: 10px;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .important-note p {
+            font-size: 20px;
+            color: #856404;
+        }
+        
+        /* Стили для координатной прямой и отрезков */
+        .number-line-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .number-line-title {
+            font-size: 22px;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .number-line {
+            position: relative;
+            height: 80px;
+            margin: 40px 0 60px 0;
+            background: linear-gradient(to right, #f0f0f0 0%, #e0e0e0 100%);
+            border-radius: 40px;
+            padding: 0 20px;
+        }
+        
+        .line-axis {
+            position: relative;
+            width: 100%;
+            height: 4px;
+            background: #333;
+            top: 38px;
+        }
+        
+        .line-arrow-right {
+            position: absolute;
+            right: -10px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid #333;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+        
+        .tick-mark {
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background: #333;
+            top: 30px;
+        }
+        
+        .tick-number {
+            position: absolute;
+            top: 55px;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .unit-segment {
+            position: absolute;
+            height: 4px;
+            background: #ffd700;
+            top: 36px;
+            border-radius: 2px;
+        }
+        
+        .segment-label {
+            position: absolute;
+            top: -25px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: #667eea;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .point-marker {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #ff4444;
+            border-radius: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(255,0,0,0.3);
+            z-index: 10;
+        }
+        
+        .point-label {
+            position: absolute;
+            top: -30px;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: 700;
+            color: #ff4444;
+            text-shadow: 1px 1px 2px white;
+        }
+        
+        .point-value {
+            position: absolute;
+            bottom: -30px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: #555;
+            white-space: nowrap;
+        }
+        
+        .variable-point {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ffd700;
+            border-radius: 50%;
+            top: 28px;
+            transform: translateX(-50%);
+            border: 3px solid #667eea;
+            box-shadow: 0 2px 10px rgba(102,126,234,0.5);
+            z-index: 10;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+        
+        .variable-label {
+            position: absolute;
+            top: -40px;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+            text-shadow: 1px 1px 2px white;
+        }
+        
+        .back-button {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 24px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+        }
+       
+       
+        /* task6 /*
+
+
+                /* Дополнительные стили для страницы задания */
+        .instruction-section {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .instruction-title {
+            font-size: 36px;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+        }
+        
+        .instruction-block {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .instruction-block h3 {
+            font-size: 28px;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+        
+        .instruction-text {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .example-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px dashed #667eea;
+        }
+        
+        .example-box p {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .example-box .formula {
+            font-size: 24px;
+            color: #667eea;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px;
+            background: #f0f4ff;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .important-note p {
+            font-size: 20px;
+            color: #856404;
+        }
+        
+        /* Стили для математических рисунков из PDF */
+        .math-drawing {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .drawing-title {
+            font-size: 22px;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* Стиль для дроби как в PDF */
+        .pdf-fraction {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .pdf-fraction .top {
+            font-size: 36px;
+            font-weight: 600;
+            color: #333;
+            padding: 0 10px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+        
+        .pdf-fraction .bottom {
+            font-size: 36px;
+            font-weight: 600;
+            color: #333;
+            padding: 0 10px;
+            border-top: 3px solid #333;
+            padding-top: 5px;
+        }
+        
+        /* Специальный стиль для числителя и знаменателя по сторонам как в PDF */
+        .pdf-terminology {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .pdf-terminology-left, .pdf-terminology-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        .pdf-terminology-left .term-label, .pdf-terminology-right .term-label {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .pdf-terminology-left .term-box, .pdf-terminology-right .term-box {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            background: #f0f4ff;
+            padding: 20px 40px;
+            border-radius: 20px;
+            border: 3px solid #667eea;
+            box-shadow: 0 10px 20px rgba(102,126,234,0.2);
+        }
+        
+        .pdf-fraction-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pdf-fraction-line {
+            width: 120px;
+            height: 6px;
+            background: #333;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .pdf-fraction-center .top-number, .pdf-fraction-center .bottom-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        /* Линии соединения как в PDF */
+        .connection-line-left {
+            position: absolute;
+            top: 30px;
+            right: -80px;
+            width: 80px;
+            height: 3px;
+            background: #ffd700;
+            transform: rotate(15deg);
+        }
+        
+        .connection-line-right {
+            position: absolute;
+            top: 30px;
+            left: -80px;
+            width: 80px;
+            height: 3px;
+            background: #ffd700;
+            transform: rotate(-15deg);
+        }
+        
+        .arrow-left, .arrow-right {
+            position: absolute;
+            top: 20px;
+            font-size: 40px;
+            color: #ffd700;
+        }
+        
+        .arrow-left {
+            right: -100px;
+        }
+        
+        .arrow-right {
+            left: -100px;
+        }
+        
+        /* Рисунок с зачеркиваниями как в PDF */
+        .pdf-canceling {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .pdf-cancel-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 150px;
+        }
+        
+        .pdf-cancel-item .number {
+            font-size: 40px;
+            font-weight: 700;
+            color: #333;
+            padding: 15px;
+        }
+        
+        .pdf-cancel-line {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: #ff4444;
+            transform: rotate(-10deg);
+        }
+        
+        .pdf-cancel-number {
+            position: absolute;
+            top: -15px;
+            right: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff4444;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 50px;
+            border: 2px solid #ff4444;
+        }
+        
+        /* Рисунок сложения дробей как в PDF */
+        .pdf-addition {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .pdf-addition-step {
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid #667eea;
+        }
+        
+        .pdf-addition-step .step-number {
+            font-size: 24px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* Рисунок трехэтажной дроби */
+        .pdf-three-floor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .pdf-three-floor-fraction {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        
+        .pdf-three-floor .floor1 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #667eea;
+            padding: 10px 25px;
+            background: white;
+            border-radius: 10px;
+            margin: 5px 0;
+            border: 2px solid #667eea;
+        }
+        
+        .pdf-three-floor .floor2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #764ba2;
+            padding: 10px 25px;
+            background: white;
+            border-radius: 10px;
+            margin: 5px 0;
+            border: 2px solid #764ba2;
+        }
+        
+        .pdf-three-floor .line {
+            width: 150px;
+            height: 4px;
+            background: #333;
+            margin: 5px 0;
+        }
+        
+        /* Рисунок смешанных чисел */
+        .pdf-mixed {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .pdf-mixed-number {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #e8f4ff;
+            padding: 20px 40px;
+            border-radius: 50px;
+            border: 3px solid #667eea;
+        }
+        
+        .pdf-mixed-number .whole {
+            font-size: 64px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .pdf-mixed-number .fraction-small {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 10px;
+        }
+        
+        .pdf-mixed-number .fraction-small .top {
+            font-size: 36px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .pdf-mixed-number .fraction-small .line {
+            width: 40px;
+            height: 3px;
+            background: #333;
+            margin: 5px 0;
+        }
+        
+        .pdf-mixed-number .fraction-small .bottom {
+            font-size: 36px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Рисунок десятичных дробей */
+        .pdf-decimal {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .pdf-decimal-column {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 15px;
+            font-size: 28px;
+            line-height: 2;
+        }
+        
+        .pdf-decimal .comma {
+            color: #ff4444;
+            font-weight: 700;
+            font-size: 32px;
+        }
+        
+        .pdf-decimal-line {
+            border-top: 3px solid #667eea;
+            margin: 10px 0;
+            padding-top: 10px;
+        }
+        
+        .back-button {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 24px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+        }
