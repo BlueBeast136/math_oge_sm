@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОГЭ Алгебра | Задание №8</title>
+    <!-- Подключаем внешний CSS файл -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для страницы задания */
+        .instruction-section {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .instruction-title {
+            font-size: 36px;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+        }
+        
+        .instruction-block {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .instruction-block h3 {
+            font-size: 28px;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+        
+        .instruction-text {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .example-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px dashed #667eea;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .important-note p {
+            font-size: 20px;
+            color: #856404;
+        }
+        
+        .math-drawing {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .drawing-title {
+            font-size: 22px;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .formula-card {
+            background: linear-gradient(135deg, #667eea10, #764ba210);
+            border: 3px solid #667eea;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .formula-card .formula-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #667eea;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .step-by-step {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            font-size: 22px;
+            color: #333;
+            flex-grow: 1;
+        }
+        
+        .warning-box {
+            background: #ffebee;
+            border-left: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 20px;
+            color: #c62828;
+        }
+        
+        .back-button {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 24px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+        }
+        
+        /* Кнопка для поднятия вверх */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: 3px solid #ffd700;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        
+        .back-to-top:active {
+            transform: scale(0.95);
+        }
+        
+        /* Таблица степеней */
+        .powers-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .powers-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+        }
+        
+        .powers-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            font-size: 18px;
+        }
+        
+        .powers-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        /* Для мобильных устройств */
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- === ШАПКА С НАЗВАНИЕМ СЛЕВА И КНОПКОЙ СПРАВОЧНЫХ МАТЕРИАЛОВ СПРАВА === -->
+    <header class="header">
+        <div class="site-title">ОГЭ Математика</div>
+        <button class="ref-button" onclick="openReference()">Справочные материалы</button>
+    </header>
+
+    <!-- === ОСНОВНОЙ КОНТЕНТ === -->
+    <main class="main-content">
+        <!-- Заголовок страницы -->
+        <h1 class="main-title">Задание №8</h1>
+        
+        <!-- ИНСТРУКЦИЯ К ВЫПОЛНЕНИЮ -->
+        <div class="instruction-section">
+            <h2 class="instruction-title">Инструкция к выполнению задания №8</h2>
+            
+            <!-- Золотое правило -->
+            <div class="instruction-block">
+                <div class="important-note">
+                    <p><strong>⭐ ЗОЛОТОЕ ПРАВИЛО ⭐</strong></p>
+                    <p>Сначала упрощаем выражение, потом подставляем числовые значения!</p>
+                    <p>Обратный порядок может привести к сильному усложнению решения, которое, в свою очередь, приведёт к ошибкам, трате большого количества времени и нервов.</p>
+                </div>
+            </div>
+            
+
+            <!-- Блок 3: Пример 1 (минималистичный) -->
+            <div class="instruction-block">
+                <h3>Пример 1</h3>
+                <div class="example-box">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <div style="font-size: 40px; font-weight: 500; color: #2c3e50; letter-spacing: 1px;">
+                            a⁶ · a⁷
+                        </div>
+                        <div style="width: 120px; height: 1px; background: #ddd;"></div>
+                        <div style="font-size: 40px; font-weight: 500; color: #2c3e50; letter-spacing: 1px;">
+                            a⁵
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-by-step">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">В числителе выражение похоже на формулу: <strong>aᵐ · aⁿ = aᵐ⁺ⁿ</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">Складываем показатели: <strong>a⁶ · a⁷ = a⁶⁺⁷ = a¹³</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">Получаем: <strong>a¹³ / a⁵</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">Теперь выражение похоже на формулу: <strong>aᵐ : aⁿ = aᵐ⁻ⁿ</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">Вычитаем показатели: <strong>a¹³⁻⁵ = a⁸</strong></div>
+                    </div>
+                </div>
+                
+                <div class="important-note">
+                    <p><strong>✅ Результат:</strong> a⁸</p>
+                </div>
+            </div>
+            
+            <!-- Блок 4: Пример 2 (минималистичный) -->
+            <div class="instruction-block">
+                <h3>Пример 2 (с несколькими переменными)</h3>
+                <div class="example-box">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <div style="font-size: 40px; font-weight: 500; color: #2c3e50; letter-spacing: 1px;">
+                            (a⁷b⁶)³
+                        </div>
+                        <div style="width: 160px; height: 1px; background: #ddd;"></div>
+                        <div style="font-size: 40px; font-weight: 500; color: #2c3e50; letter-spacing: 1px;">
+                            (a⁴b³)⁴
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <p><strong>Важно:</strong> Сложение и вычитание степеней можно применять только у одинаковых оснований! Если выражение содержит несколько переменных, то работаем с каждой переменной отдельно.</p>
+                </div>
+                
+                <div class="step-by-step">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">В первую очередь нам надо упростить отдельно числитель и отдельно знаменатель. Находим формулы, которые похожи на выражения со скобками: <strong>(ab)ⁿ = aⁿ · bⁿ</strong> и <strong>(aᵐ)ⁿ = aᵐ·ⁿ</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">Раскрываем скобки: <strong>(a⁷b⁶)³ = a⁷·³ · b⁶·³ = a²¹ · b¹⁸</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">Знаменатель: <strong>(a⁴b³)⁴ = a⁴·⁴ · b³·⁴ = a¹⁶ · b¹²</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">Получаем: <strong>(a²¹ · b¹⁸) / (a¹⁶ · b¹²)</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">Так как дробь состоит исключительно из множителей, то её можно разделить на две дроби: <strong>(a²¹/a¹⁶) · (b¹⁸/b¹²)</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">Дальше удобно работать с обеими дробями отдельно: <strong>a²¹⁻¹⁶ · b¹⁸⁻¹² = a⁵ · b⁶</strong></div>
+                    </div>
+                </div>
+                
+                <div class="important-note">
+                    <p><strong>✅ Результат:</strong> a⁵b⁶</p>
+                </div>
+            </div>
+            
+            <!-- Блок 5: Пример 3 (минималистичный) -->
+            <div class="instruction-block">
+                <h3>Пример 3 (с числами)</h3>
+                <div class="example-box">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <div style="font-size: 40px; font-weight: 500; color: #2c3e50; letter-spacing: 1px;">
+                            9⁵ · 3⁷
+                        </div>
+                        <div style="width: 120px; height: 1px; background: #ddd;"></div>
+                        <div style="font-size: 40px; font-weight: 500; color: #2c3e50; letter-spacing: 1px;">
+                            27⁴
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-by-step">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">Представляем числа в виде степени с основанием 3: <strong>9 = 3², 27 = 3³</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">Подставляем: <strong>(3²)⁵ · 3⁷ / (3³)⁴</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">Раскрываем скобки по формуле (aᵐ)ⁿ = aᵐ·ⁿ: <strong>3¹⁰ · 3⁷ / 3¹²</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">Складываем показатели в числителе: <strong>3¹⁰⁺⁷ = 3¹⁷</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">Вычитаем показатели: <strong>3¹⁷⁻¹² = 3⁵</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">Вычисляем: <strong>3⁵ = 243</strong></div>
+                    </div>
+                </div>
+                
+                <div class="important-note">
+                    <p><strong>✅ Результат:</strong> 243</p>
+                </div>
+                
+                <div class="math-drawing">
+                    <div class="drawing-title">Таблица степеней числа 3:</div>
+                    <table class="powers-table">
+                        <tr><th>Степень</th><th>Значение</th> </tr>
+                        <tr><td>3¹</td><td>3</td> </tr>
+                        <tr><td>3²</td><td>9</td> </tr>
+                        <tr><td>3³</td><td>27</td> </tr>
+                        <tr><td>3⁴</td><td>81</td> </tr>
+                        <tr><td>3⁵</td><td>243</td> </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Блок 6: Пример с корнями 1 -->
+            <div class="instruction-block">
+                <h3>√ Пример 4 (с корнями)</h3>
+                <div class="example-box">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <div style="font-size: 40px; font-weight: 500; color: #2c3e50; letter-spacing: 1px;">
+                            √54
+                        </div>
+                        <div style="width: 60px; height: 1px; background: #ddd;"></div>
+                        <div style="font-size: 40px; font-weight: 500; color: #2c3e50; letter-spacing: 1px;">
+                            √6
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="important-note">
+                    <p><strong>❗ Любые математические формулы работают в обе стороны!</strong></p>
+                </div>
+                
+                <div class="step-by-step">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">Используем формулу: <strong>√a / √b = √(a/b)</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">Записываем под один корень: <strong>√(54/6)</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">Делим: <strong>54/6 = 9</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">Извлекаем корень: <strong>√9 = 3</strong></div>
+                    </div>
+                </div>
+                
+                <div class="important-note">
+                    <p><strong>✅ Результат:</strong> 3</p>
+                </div>
+            </div>
+            
+            <!-- Блок 7: Пример с корнями 2 (сложный) -->
+            <div class="instruction-block">
+                <h3>√ Пример 5 (сложный)</h3>
+                <div class="example-box">
+                    <div style="display: flex; justify-content: center; gap: 15px; align-items: baseline;">
+                        <span style="font-size: 40px; font-weight: 500; color: #2c3e50;">√15</span>
+                        <span style="font-size: 32px; color: #888;">·</span>
+                        <span style="font-size: 40px; font-weight: 500; color: #2c3e50;">√20</span>
+                        <span style="font-size: 32px; color: #888;">·</span>
+                        <span style="font-size: 40px; font-weight: 500; color: #2c3e50;">√27</span>
+                    </div>
+                </div>
+                
+                <div class="step-by-step">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">Разбиваем на простые множители: <strong>√(5·3) · √(5·4) · √(3·9)</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">Переставляем множители: <strong>√(5·5·3·3·4·9)</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">Записываем в виде степеней: <strong>√(5² · 3² · 2² · 3²)</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">Извлекаем корень (делим степени на 2): <strong>5 · 3 · 2 · 3</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">Перемножаем: <strong>5 · 3 = 15, 15 · 2 = 30, 30 · 3 = 90</strong></div>
+                    </div>
+                </div>
+                
+                <div class="important-note">
+                    <p><strong>✅ Результат:</strong> 90</p>
+                </div>
+            </div>
+            
+            <!-- Блок 8: Сложный пример с модулем -->
+            <div class="instruction-block">
+                <h3>Пример 6 (сложный)</h3>
+                <div class="example-box">
+                    <div style="display: flex; justify-content: center; align-items: baseline; flex-wrap: wrap; gap: 10px;">
+                        <span style="font-size: 40px; font-weight: 500; color: #2c3e50;">√(2√3 - 7)²</span>
+                        <span style="font-size: 32px; color: #888;">+</span>
+                        <span style="font-size: 40px; font-weight: 500; color: #2c3e50;">2√3</span>
+                    </div>
+                </div>
+                
+                <div class="important-note">
+                    <p><strong>Главное правило:</strong> Под квадратным корнем могут находиться только положительные числа! √a² = |a|</p>
+                </div>
+                
+                <div class="step-by-step">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">Извлекаем корень: <strong>|2√3 - 7| + 2√3</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">Оцениваем значение: <strong>√3 ≈ 1,732</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">2√3 ≈ <strong>3,464</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">Сравниваем: <strong>3,464 - 7 = -3,536 (отрицательное)</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">Раскрываем модуль: <strong>|2√3 - 7| = 7 - 2√3</strong></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">Подставляем: <strong>(7 - 2√3) + 2√3 = 7</strong></div>
+                    </div>
+                </div>
+                
+                <div class="important-note">
+                    <p><strong>✅ Результат:</strong> 7</p>
+                </div>
+            </div>
+            
+            <!-- Блок 9: Полезные советы -->
+            <div class="instruction-block">
+                <h3>Полезные советы</h3>
+                <div class="instruction-text">
+                    <ul style="font-size: 22px; line-height: 2; margin-left: 30px;">
+                        <li>Всегда сначала упрощайте выражение, только потом подставляйте числа</li>
+                        <li>Ищите в справочных материалах формулу, похожую на ваш пример</li>
+                        <li>Если основания разные — попробуйте привести к одному основанию</li>
+                        <li>С корнями — разбивайте на простые множители</li>
+                        <li>Помните про модуль при извлечении корня из квадрата</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Кнопка возврата на главную -->
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">← Вернуться на главную</a>
+        </div>
+    </main>
+
+    <!-- Кнопка для поднятия вверх -->
+    <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <!-- === МОДАЛЬНОЕ ОКНО СО СПРАВОЧНЫМИ МАТЕРИАЛАМИ === -->
+    <div id="referenceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeReference()">&times;</span>
+            <h2 class="ref-title">СПРАВОЧНЫЕ МАТЕРИАЛЫ ПО МАТЕМАТИКЕ</h2>
+            <img src="images/справочые материалы 3.jpg" alt="Справочные" style="width: 910px; height: auto;">
+    <!-- === СКРИПТЫ === -->
+    <script>
+        // Функция для открытия модального окна
+        function openReference() {
+            document.getElementById('referenceModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Функция для закрытия модального окна
+        function closeReference() {
+            document.getElementById('referenceModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Закрытие по клику вне модального окна
+        window.onclick = function(event) {
+            var modal = document.getElementById('referenceModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Закрытие по клавише ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                var modal = document.getElementById('referenceModal');
+                if (modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+        
+        // Кнопка для поднятия вверх
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

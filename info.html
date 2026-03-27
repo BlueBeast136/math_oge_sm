@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОГЭ Алгебра | Информация</title>
+    <!-- Подключаем внешний CSS файл -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для страницы информации */
+        .info-section {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .info-title {
+            font-size: 42px;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        .info-block {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .info-block h3 {
+            font-size: 32px;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+        
+        .info-text {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .features-list {
+            list-style-type: none;
+            margin: 30px 0;
+        }
+        
+        .features-list li {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            font-size: 22px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .feature-text {
+            color: #333;
+        }
+        
+        /* Стили для плашки разработчиков */
+        .developers-card {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border-radius: 24px;
+            padding: 35px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .developers-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102,126,234,0.2);
+        }
+        
+        .developers-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .developers-title span {
+            font-size: 32px;
+        }
+        
+        .developers-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .developer-item {
+            background: white;
+            border-radius: 20px;
+            padding: 20px 35px;
+            text-align: center;
+            min-width: 200px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .developer-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102,126,234,0.15);
+        }
+        
+        .developer-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        
+        .developer-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .developer-role {
+            font-size: 16px;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .author-item {
+            background: linear-gradient(135deg, #fffaf0, #fff3cd);
+            border: 1px solid #ffd966;
+        }
+        
+        .contact-info {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px dashed #667eea;
+        }
+        
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 20px;
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid #667eea;
+            margin-top: 15px;
+        }
+        
+        .contact-email:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
+        }
+        
+        .back-button {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 24px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+        }
+        
+        /* Кнопка для поднятия вверх */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: 3px solid #ffd700;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        
+        .back-to-top:active {
+            transform: scale(0.95);
+        }
+        
+        /* Для мобильных */
+        @media (max-width: 768px) {
+            .info-title {
+                font-size: 32px;
+            }
+            
+            .info-block h3 {
+                font-size: 28px;
+            }
+            
+            .info-text {
+                font-size: 18px;
+            }
+            
+            .features-list li {
+                font-size: 18px;
+                padding: 15px;
+            }
+            
+            .feature-icon {
+                font-size: 28px;
+                min-width: 40px;
+            }
+            
+            .developers-grid {
+                gap: 20px;
+            }
+            
+            .developer-item {
+                padding: 15px 25px;
+                min-width: 160px;
+            }
+            
+            .developer-name {
+                font-size: 20px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- === ШАПКА С НАЗВАНИЕМ СЛЕВА === -->
+    <header class="header">
+        <div class="site-title">ОГЭ Математика</div>
+    </header>
+
+    <!-- === ОСНОВНОЙ КОНТЕНТ === -->
+    <main class="main-content">
+        <!-- Заголовок страницы -->
+        <h1 class="main-title">Информация о сайте</h1>
+        
+        <div class="info-section">
+            <h2 class="info-title">О проекте</h2>
+            
+            <div class="info-block">
+                <h3>Что это за сайт?</h3>
+                <div class="info-text">
+                    <p>Данный сайт создан для подготовки к ОГЭ по алгебре. Здесь вы найдете подробные инструкции и материалы для решения заданий:</p>
+                </div>
+                
+                <ul class="features-list">
+                    <li>
+                        <span class="feature-icon">📖</span>
+                        <span class="feature-text"><strong>Задание №6</strong> — Обыкновенные и десятичные дроби, смешанные числа</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">📏</span>
+                        <span class="feature-text"><strong>Задание №7</strong> — Координатная прямая, отрезки, переменные</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">🔢</span>
+                        <span class="feature-text"><strong>Задание №8</strong> — Степени, корни, свойства степеней</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">📈</span>
+                        <span class="feature-text"><strong>Задание №9 и №13</strong> — Уравнения, неравенства, квадратичная функция</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">🎲</span>
+                        <span class="feature-text"><strong>Задание №10</strong> — Теория вероятности</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">📊</span>
+                        <span class="feature-text"><strong>Задание №11</strong> — Графики функций (линейная, квадратичная, гипербола)</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">📐</span>
+                        <span class="feature-text"><strong>Задание №12</strong> — Расчеты по формулам</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">📈</span>
+                        <span class="feature-text"><strong>Задание №14</strong> — Арифметическая и геометрическая прогрессии</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="info-block">
+                <h3>Наша цель</h3>
+                <div class="info-text">
+                    <p>Мы стремимся сделать подготовку к ОГЭ максимально понятной и доступной. Все инструкции составлены простым языком, с подробными объяснениями и наглядными примерами.</p>
+                    <p>Каждое задание сопровождается пошаговым разбором, чтобы вы могли не просто заучить алгоритм, а действительно понять материал.</p>
+                </div>
+            </div>
+            
+            <!-- Плашка о разработчиках -->
+            <div class="developers-card">
+                <div class="developers-title">
+                    <span></span> Разработчики <span></span>
+                </div>
+                
+                <div class="developers-grid">
+                    <div class="developer-item">
+                        <div class="developer-icon">💻</div>
+                        <div class="developer-name">Шишкин Никита</div>
+                        <div class="developer-role">Разработчик</div>
+                    </div>
+                    <div class="developer-item">
+                        <div class="developer-icon">⚙️</div>
+                        <div class="developer-name">Камалов Тимур</div>
+                        <div class="developer-role">Разработчик</div>
+                    </div>
+                    <div class="developer-item">
+                        <div class="developer-icon">✍️</div>
+                        <div class="developer-name">Ларионова Наталья</div>
+                        <div class="developer-role">Автор текста</div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-text" style="margin-bottom: 15px;">
+                        <strong>Связь с нами:</strong>
+                    </div>
+                    <a href="mailto:natalia.larionowa@yandex.ru" class="contact-email">
+                        natalia.larionowa@yandex.ru
+                    </a>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="index.html" class="back-button">← Вернуться на главную</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Кнопка для поднятия вверх -->
+    <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <!-- === СКРИПТЫ === -->
+    <script>
+        // Кнопка для поднятия вверх
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

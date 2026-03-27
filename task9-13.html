@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОГЭ Алгебра | Задания №9 и №13</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .instruction-section {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .instruction-title {
+            font-size: 36px;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+        }
+        
+        .instruction-block {
+            padding: 20px 0;
+        }
+        
+        .text-block {
+            background: #fafaff;
+            border-radius: 24px;
+            padding: 28px 32px;
+            margin: 24px 0;
+            line-height: 1.7;
+            font-size: 20px;
+            color: #2c3e50;
+            border: 1px solid #eef2ff;
+        }
+        
+        .highlight-block {
+            background: #fffaf0;
+            border-left: 4px solid #ffd966;
+            border-radius: 16px;
+            padding: 20px 28px;
+            margin: 24px 0;
+            font-size: 20px;
+            color: #7b5e2c;
+        }
+        
+        .figure-card {
+            background: #fefefe;
+            border-radius: 24px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .figure-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .figure-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .img-caption {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .formula {
+            font-size: 28px;
+            font-weight: 600;
+            color: #667eea;
+            text-align: center;
+            padding: 16px 20px;
+            background: #f8f9ff;
+            border-radius: 20px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+        }
+        
+        .step-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        
+        .step-list li {
+            margin: 16px 0;
+            padding: 12px 0 12px 32px;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .step-list li::before {
+            content: "•";
+            color: #667eea;
+            font-size: 28px;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+        
+        .back-button {
+            margin-top: 40px;
+            padding: 14px 36px;
+            font-size: 22px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-decoration: none;
+            display: inline-block;
+            border: 1px solid #e0e7ff;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.15);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 64px;
+            height: 64px;
+            background: #ffffff;
+            color: #667eea;
+            border: 1px solid #e2e8f0;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #f1f5f9;
+            transform: translateY(-4px);
+        }
+        
+        @media (max-width: 768px) {
+            .instruction-section {
+                padding: 24px;
+            }
+            .figure-img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="site-title">ОГЭ Математика</div>
+        <button class="ref-button" onclick="openReference()">Справочные материалы</button>
+    </header>
+
+    <main class="main-content">
+        <h1 class="main-title">Задания №9 и №13</h1>
+        
+        <div class="instruction-section">
+            <h2 class="instruction-title">Инструкция к выполнению</h2>
+            
+            <div class="instruction-block">
+                <!-- ========== НАЧАЛО ТЕКСТА ИЗ ДОКУМЕНТА ========== -->
+                <div class="text-block">
+                    <p>Задания 9 и 13 объединены на одной странице не просто так. С помощью уравнений и неравенств мы исследуем наши любимые функции. Алгоритмы решения у них абсолютно одинаковые, но разные вопросы.</p>
+                    <p>Уравнение спрашивает: «В какой точке функция пересекает ось ОХ?», а неравенство: «На каких значениях x функция положительна? Или отрицательна?»</p>
+                </div>
+                
+                <!-- ФОТО 1: media/image1.png -->
+                <div class="figure-card">
+                    <div class="figure-title">График функции</div>
+                    <img src="media/image1.png" alt="График функции" class="figure-img" onerror="this.style.display='none'">
+                    <div class="img-caption">На графике видно, в каких точках функция пересекает ось OX — это корни уравнения</div>
+                </div>
+                
+                <div class="text-block">
+                    <p>Что бы разобраться в выше сказанном, лучше рассмотреть функции отдельно.</p>
+                    <p>Начнём, как обычно, с линейной функции, так как она самая простая.</p>
+                </div>
+                
+                <!-- ФОТО 2: media/image2.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Линейная функция</div>
+                    <img src="media/image2.png" alt="Линейная функция" class="figure-img" onerror="this.style.display='none'">
+                    <div class="img-caption">График линейной функции — прямая линия. Коэффициент k определяет наклон, b — точку пересечения с осью OY</div>
+                </div>
+                
+                <div class="text-block">
+                    <p>Давайте рассмотрим сразу конкретный пример:</p>
+                </div>
+                
+                <!-- ФОТО 3: media/image3.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Пример линейного уравнения</div>
+                    <img src="media/image3.png" alt="Пример линейного уравнения" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Линейные уравнения и неравенства решаются абсолютно одинаково, как и говорилось выше. Но, когда во втором пункте <strong>обе части будут делиться на отрицательное число — у неравенств переворачивается знак</strong>, у уравнений ничего не происходит.</p>
+                    <p>Но вернёмся к нашему примеру:</p>
+                </div>
+                
+                <!-- ФОТО 4: media/image4.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Решение линейного уравнения</div>
+                    <img src="media/image4.png" alt="Решение линейного уравнения" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Должно быть понятно, что прямая линия может пересечь ось ОХ только в одной точке, отсюда в линейном уравнении всегда получаем только один корень. В данном случае прямая пересекает ось ОХ в точке <strong>-5/3</strong> — и это ответ на уравнение.</p>
+                    <p>Всё интереснее с неравенством:</p>
+                    <div class="formula">3x + 5 < 0</div>
+                    <p>По окончании решения мы понимаем, что функция меняет свой знак (значения по оси ОУ) в точке -5/3. Если помните, то коэффициент k отвечает за наклон и в данной функции он положительный, а значит функция возрастает. Поэтому на графике она выглядит именно так. Всё что расположено выше оси ОХ — положительные значения функции, ниже — отрицательные, на оси ОХ равны нулю. Неравенство ставит вопрос: «Когда функция меньше нуля?» или «На каких x значения y меньше нуля?»</p>
+                </div>
+                
+                <!-- ФОТО 5: media/image5.png -->
+                <div class="figure-card">
+                    <div class="figure-title">График: где функция отрицательна?</div>
+                    <img src="media/image5.png" alt="График с отрицательной областью" class="figure-img" onerror="this.style.display='none'">
+                    <div class="img-caption">На промежутке от -∞ до -5/3 функция находится под осью OX → отрицательные значения</div>
+                </div>
+                
+                <div class="text-block">
+                    <p>Графики читаем как текст — слева направо. На промежутке от -∞ до -5/3 функция находится под осью ОХ, значит имеет там отрицательные значения по оси ОУ. Сама точка -5/3 в ответ не входит, как мы помним (в ней значение функции равно нулю, а это в контексте данного неравенства нам не интересно). На языке математики ответ будет следующим:</p>
+                    <div class="formula">x ∈ (-∞; -5/3)</div>
+                    <p>Около бесконечностей всегда ставятся круглые скобки, так как конкретное значение там неизвестно. Около точки скобки ставятся в зависимости от строгости неравенства. В данном случае неравенство строгое — скобка круглая.</p>
+                </div>
+                
+                <!-- ФОТО 6: media/image6.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Правило определения знака</div>
+                    <img src="media/image6.png" alt="Правило знака" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Если никак не получается запомнить, когда функция возрастает или убывает, то можно пользоваться следующим правилом: <strong>берём в ответ ту область, куда показывает знак неравенства.</strong></p>
+                    <p>В нашем неравенстве знак показывает влево, значит закрашиваем область слева от точки.</p>
+                </div>
+                
+                <!-- ФОТО 7: media/image7.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Область слева от точки</div>
+                    <img src="media/image7.png" alt="Область слева от точки" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="highlight-block">
+                    <p><strong>❗ Но это правило только для линейных неравенств!</strong></p>
+                </div>
+                
+                <div class="text-block">
+                    <p>Теперь рассмотрим квадратичные уравнения и неравенства.</p>
+                </div>
+                
+                <!-- ФОТО 8: media/image8.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Квадратичные уравнения и неравенства</div>
+                    <img src="media/image8.png" alt="Квадратичные уравнения" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Квадратные уравнения и неравенства так же решаются одинаково. Поэтому сначала рассмотрим все виды квадратных уравнений и методы их решений. У неравенств точки будут находиться такими же способами.</p>
+                    <div class="formula">ax² + bx + c = 0</div>
+                    <p>Это классический вид квадратного уравнения. Формулы для нахождения корней даны в справочных материалах:</p>
+                </div>
+                
+                <!-- ФОТО 9: media/image9.jpeg -->
+                <div class="figure-card">
+                    <div class="figure-title">Формулы корней квадратного уравнения</div>
+                    <img src="media/image9.png" alt="Формулы корней" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Буква D называется дискриминант. Слово знакомое, но что оно значит? — Это выражение, которое помогает определить количество корней.</p>
+                </div>
+                
+                <!-- ФОТО 10: media/image10.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Дискриминант</div>
+                    <img src="media/image10.png" alt="Дискриминант" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>После определения количества корней пользуемся формулами:</p>
+                </div>
+                
+                <!-- ФОТО 11: media/image11.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Формула для двух корней</div>
+                    <img src="media/image11.png" alt="Два корня" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 12: media/image12.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Формула для одного корня</div>
+                    <img src="media/image12.png" alt="Один корень" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>У любого вида квадратного уравнения корни можно считать по формулам из справочных материалов. Удобнее всего пользоваться ими, когда дано полное квадратное уравнение (все три коэффициента a, b, c ≠ 0). Если хоть один из коэффициентов равен нулю, то уравнения называются неполными, и есть более удобные способы их решений:</p>
+                </div>
+                
+                <!-- ФОТО 13: media/image13.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Неполные квадратные уравнения</div>
+                    <img src="media/image13.png" alt="Неполные уравнения" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Неполное уравнение с c = 0 всегда даёт два корня, причём один из них всегда равен нулю.</p>
+                </div>
+                
+                <!-- ФОТО 14: media/image14.png -->
+                <div class="figure-card">
+                    <div class="figure-title">ax² + bx = 0</div>
+                    <img src="media/image14.png" alt="ax² + bx = 0" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Его так же можно решить, расписав по формуле сокращённого умножения, которая так же дана в справочных материалах:</p>
+                </div>
+                
+                <!-- ФОТО 15: media/image15.jpeg -->
+                <div class="figure-card">
+                    <div class="figure-title">Формулы сокращённого умножения</div>
+                    <img src="media/image9.png" alt="Формулы сокращённого умножения" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 16: media/image16.png -->
+                <div class="figure-card">
+                    <div class="figure-title">ax² + c = 0</div>
+                    <img src="media/image16.png" alt="ax² + c = 0" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Неполное квадратное уравнение с b = 0 либо имеет два симметричных корня (имеется ввиду одинаковых по модулю, но разных по знаку), либо не имеет корней вообще.</p>
+                    <p>Если и b = 0 и c = 0, то квадратное уравнение имеет всегда один корень x = 0, но в ОГЭ такие примеры не встречаются.</p>
+                    <p>Теперь мы умеем находить корни квадратных уравнений, а значит на вопрос уравнения ответить сможем.</p>
+                    <p>Далее рассмотрим квадратные неравенства:</p>
+                </div>
+                
+                <!-- ФОТО 17: media/image17.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Квадратные неравенства (часть 1)</div>
+                    <img src="media/image17.png" alt="Квадратные неравенства 1" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 18: media/image18.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Квадратные неравенства (часть 2)</div>
+                    <img src="media/image18.png" alt="Квадратные неравенства 2" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Если дискриминант положительный, то имеем две точки пересечения с осью ОХ, а это значит, что две части параболы находятся с одной стороны от оси ОХ, а третья с другой. Где какие части будут расположены зависит от знака коэффициента a. Но ответ на любой вопрос неравенства будет всегда!</p>
+                    <p>На схемах плюсами и минусами обозначены значения функции на промежутках. То есть, если ветки находятся над осью ОХ — они положительные, если под — отрицательные и т.д.</p>
+                    <p>Когда дискриминант равен нулю, картина интереснее. Парабола целиком находится либо над, либо под осью ОХ, а её вершина лежит на оси.</p>
+                    <p>Здесь надо рассмотреть каждое неравенство в отдельности. Нестрогие неравенства включают в себя корни уравнения.</p>
+                </div>
+                
+                <!-- ФОТО 19: media/image19.png -->
+                <div class="figure-card">
+                    <div class="figure-title">D = 0 — нестрогие неравенства</div>
+                    <img src="media/image19.png" alt="D = 0 нестрогие" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Например, нам досталась парабола ветками вверх:</p>
+                    <p>Если знаком неравенства будет ≥, то нам надо указать области, где функция положительна и равна нулю. Так как вся парабола находится над осью ОХ, то положительна она будет от -∞ до корня и от корня до +∞, а равна нулю она будет в корне. Тогда нам нет смысла прерывать ответ корнем. Если же знак неравенства ≤, то указываем области, когда функция отрицательна и равна нулю. Под осью функции нет, а на оси только одна точка, поэтому в ответе будет только одна точка.</p>
+                    <p>Картина обратная, если парабола ветками вниз.</p>
+                </div>
+                
+                <!-- ФОТО 20: media/image20.png -->
+                <div class="figure-card">
+                    <div class="figure-title">D = 0 — строгие неравенства</div>
+                    <img src="media/image20.png" alt="D = 0 строгие" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>У строгих неравенств корень в ответе не учитывается. Рассмотрим случай с параболой ветками вниз:</p>
+                    <p>Если знак неравенства <, то ищем функцию под осью ОХ. Так как она там находится целиком, то ответом будет вся числовая прямая. А вот при знаке >, ищем функцию над осью ОХ. Её там нет, поэтому и решений нет.</p>
+                    <p>В случае отрицательного дискриминанта всё ещё проще. Ответом будет либо вся числовая прямая, либо решений не будет совсем, даже не смотря на строгость неравенств.</p>
+                </div>
+                
+                <!-- ФОТО 21: media/image21.png -->
+                <div class="figure-card">
+                    <div class="figure-title">D < 0 (часть 1)</div>
+                    <img src="media/image21.png" alt="D < 0 1" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 22: media/image22.png -->
+                <div class="figure-card">
+                    <div class="figure-title">D < 0 (часть 2)</div>
+                    <img src="media/image22.png" alt="D < 0 2" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ========== ПАМЯТКА ========== -->
+                <div class="highlight-block">
+                    <p><strong>Краткая памятка по квадратным неравенствам:</strong></p>
+                    <ul class="step-list">
+                        <li><strong>D > 0</strong> — два корня, парабола пересекает ось OX в двух точках</li>
+                        <li><strong>D = 0</strong> — один корень, парабола касается оси OX</li>
+                        <li><strong>D < 0</strong> — нет корней, парабола не пересекает ось OX</li>
+                        <li><strong>a > 0</strong> — ветви параболы направлены вверх</li>
+                        <li><strong>a < 0</strong> — ветви параболы направлены вниз</li>
+                        <li><strong>Строгие неравенства (> , <)</strong> — корни НЕ входят в ответ (круглые скобки)</li>
+                        <li><strong>Нестрогие неравенства (≥ , ≤)</strong> — корни ВХОДЯТ в ответ (квадратные скобки)</li>
+                        <li>Около бесконечностей всегда ставятся круглые скобки</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">← Вернуться на главную</a>
+        </div>
+    </main>
+
+    <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <div id="referenceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeReference()">&times;</span>
+            <h2 class="ref-title">СПРАВОЧНЫЕ МАТЕРИАЛЫ</h2>
+           <img src="images/справочные материалы 4.jpg" alt="Справочные" style="width: 910px; height: auto;">
+
+    <script>
+        function openReference() {
+            document.getElementById('referenceModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeReference() {
+            document.getElementById('referenceModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        window.onclick = function(e) {
+            let modal = document.getElementById('referenceModal');
+            if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+        };
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                let modal = document.getElementById('referenceModal');
+                if (modal.style.display === 'block') { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+            }
+        });
+        window.addEventListener('scroll', function() {
+            let btn = document.getElementById('backToTopBtn');
+            if (window.scrollY > 400) btn.classList.add('show');
+            else btn.classList.remove('show');
+        });
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    </script>
+</body>
+</html>

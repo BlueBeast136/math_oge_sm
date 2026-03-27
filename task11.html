@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОГЭ Алгебра | Задание №11</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .instruction-section {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .instruction-title {
+            font-size: 36px;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+        }
+        
+        .instruction-block {
+            padding: 20px 0;
+        }
+        
+        .text-block {
+            background: #fafaff;
+            border-radius: 24px;
+            padding: 28px 32px;
+            margin: 24px 0;
+            line-height: 1.7;
+            font-size: 20px;
+            color: #2c3e50;
+            border: 1px solid #eef2ff;
+        }
+        
+        .highlight-block {
+            background: #fffaf0;
+            border-left: 4px solid #ffd966;
+            border-radius: 16px;
+            padding: 20px 28px;
+            margin: 24px 0;
+            font-size: 20px;
+            color: #7b5e2c;
+        }
+        
+        .figure-card {
+            background: #fefefe;
+            border-radius: 24px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .figure-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .figure-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .img-caption {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .formula {
+            font-size: 28px;
+            font-weight: 600;
+            color: #667eea;
+            text-align: center;
+            padding: 16px 20px;
+            background: #f8f9ff;
+            border-radius: 20px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+        }
+        
+        .step-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        
+        .step-list li {
+            margin: 16px 0;
+            padding: 12px 0 12px 32px;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .step-list li::before {
+            content: "•";
+            color: #667eea;
+            font-size: 28px;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+        
+        .back-button {
+            margin-top: 40px;
+            padding: 14px 36px;
+            font-size: 22px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-decoration: none;
+            display: inline-block;
+            border: 1px solid #e0e7ff;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.15);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 64px;
+            height: 64px;
+            background: #ffffff;
+            color: #667eea;
+            border: 1px solid #e2e8f0;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #f1f5f9;
+            transform: translateY(-4px);
+        }
+        
+        @media (max-width: 768px) {
+            .instruction-section {
+                padding: 24px;
+            }
+            .figure-img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="site-title">ОГЭ Математика</div>
+        <button class="ref-button" onclick="openReference()">Справочные материалы</button>
+    </header>
+
+    <main class="main-content">
+        <h1 class="main-title">Задание №11</h1>
+        
+        <div class="instruction-section">
+            <h2 class="instruction-title">Инструкция к выполнению</h2>
+            
+            <div class="instruction-block">
+                <!-- ========== НАЧАЛО ТЕКСТА ИЗ ДОКУМЕНТА ========== -->
+                <div class="text-block">
+                    <p>Задание 11 является одним из самых простых. Достаточно помнить формулы и вид функций, и немного разбираться в графиках.</p>
+                    <p>Сначала давайте посмотрим на пустой график:</p>
+                </div>
+                
+                <!-- ФОТО 1: media/image1.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Знаки функции</div>
+                    <img src="media2/image1.png" alt="Пустой график" class="figure-img" onerror="this.style.display='none'">
+                    <div class="img-caption">Координатная плоскость: оси OX и OY пересекаются под углом 90° в центре координат</div>
+                </div>
+                
+                <div class="text-block">
+                    <p>Графики функций строятся на координатной плоскости. Координаты мы задаём с помощью двух прямых ОХ и ОУ, которые перпендикулярны друг другу (пересекаются под углом 90°). Точкой пересечения этих прямых является центр координат. Каждая координатная прямая имеет направление (в какую сторону увеличиваются числовые значения) и единичный отрезок (промежуток между двумя соседними целыми числами).</p>
+                    <p>Так же необходимо понимать, что такое функция. Проведём простую аналогию. В чём заключена функция мясорубки на кухне?</p>
+                    <div class="formula">Берём кусок мяса → кладём в мясорубку → получаем фарш</div>
+                    <p>В математике в роли «мясорубки» выступают функции, вместо куска мяса значение переменной x, фарш — значение переменной y. То есть, цепочка действий следующая:</p>
+                    <div class="formula">Берём значение x → подставляем в функцию → получаем значение y</div>
+                    <p>Если взять получившиеся пары чисел (x, y) и нанести их на координатную плоскость, то точки будут выстраиваться в линию определённой формы.</p>
+                    <p>Теперь можно рассмотреть каждую функцию по отдельности.</p>
+                </div>
+                
+                <!-- ФОТО 2: media/image2.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Линейная функция</div>
+                    <img src="media2/image2.png" alt="Линейная функция" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Первая функция, с которой знакомят школьников — линейная. Название говорящее. Все точки выстраиваются на графике в прямую линию. Вид любой функции задают коэффициенты (числа). У линейной функции их два: k, b.</p>
+                    <p><strong>k</strong> — задаёт наклон прямой к оси ОХ, а <strong>b</strong> — является координатой пересечения оси ОУ с функцией (0; y). Из-за того, что коэффициенты могут быть любыми, то и прямую на графике можно расположить бесконечным количеством способов.</p>
+                    <p>Если нужно построить линейную функцию на графике, берём два любых числа за x и подставляем их в уравнение функции. Таким образом, получаем координаты двух точек. Этого достаточно для построения прямой.</p>
+                    <p>Вообще говоря, глядя на график можно определить знак коэффициентов, а иногда даже их точное значение.</p>
+                </div>
+                
+                <!-- ФОТО 3: media/image3.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Определение знака коэффициента k</div>
+                    <img src="media2/image3.png" alt="Определение знака k" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Для удобства и простоты давайте поставим с левой стороны человечка и отправим его по направлению оси ОХ. Если он будет подниматься — функция возрастает, коэффициент k положительный, а если спускаться, то функция убывает, коэффициент k отрицательный.</p>
+                    <p>Если на графике видно, в какой точке функция пересекла ось ОУ, значит мы точно можем определить коэффициент b, либо если единичных отрезков не дано, то смотрим, где находится точка пересечения, над или под осью ОХ. В этом случае получится определить только знак коэффициента.</p>
+                    <p>Теперь рассмотрим случаи, когда коэффициенты не имеют знака. Или когда они равны нулю.</p>
+                </div>
+                
+                <!-- ФОТО 4: media/image4.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Частные случаи линейной функции</div>
+                    <img src="media2/image4.png" alt="Частные случаи" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 5: media/image5.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Линейная функция (продолжение)</div>
+                    <img src="media2/image5.png" alt="Линейная функция продолжение" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Квадратичная функция или парабола имеет вид подковы на графике. Её ветки симметричны относительно своей вершины.</p>
+                    <p>Если знаки коэффициентов a и c ещё на графике можно увидеть, то сказать что-то определённое про b, глядя на график нельзя!</p>
+                </div>
+                
+                <!-- ФОТО 6: media/image6.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Квадратичная функция (парабола)</div>
+                    <img src="media2/image6.png" alt="Квадратичная функция" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 7: media/image7.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Парабола (продолжение)</div>
+                    <img src="media2/image7.png" alt="Парабола продолжение" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Коэффициент b входит в формулу нахождения вершины параболы. Он означает лишь, что вершина сдвинута по оси ОХ относительно 0.</p>
+                    <p>Когда в задании попадаются три параболы, как правило, вносит сомнения определение коэффициента b. В таком случае, проще всего будет взять координаты любой точки, которая лежит только на одной параболе, и подставить их в формулу. Там, где равенство будет верное — и есть правильный ответ.</p>
+                    <p>Например:</p>
+                </div>
+                
+                <!-- ФОТО 8: media/image8.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Три параболы</div>
+                    <img src="media2/image8.png" alt="Три параболы" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>По направлению ветвей сразу понятно, что графику «В» соответствует формула 3. А остальное не ясно. Поэтому координаты точки в помощь:</p>
+                </div>
+                
+                <!-- ФОТО 9: media/image9.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Координаты точки в помощь</div>
+                    <img src="media2/image9.png" alt="Координаты точки" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <div class="text-block">
+                    <p>Например, возьмём точку (3;0). Она лежит на параболе «А» и не лежит на «Б», в таком случае, одно из равенств должно быть верно и соответствовать параболе «А», а другое — нет.</p>
+                    <p>Подставим координаты выбранной точки в формулы:</p>
+                    <div class="formula">1) 0 = 2·3² - 8·3 + 6</div>
+                    <div class="formula">2) 0 = 2·3² + 8·3 + 6</div>
+                    <p>В первой формуле получаем 0 = 0 — верное равенство, значит параболе «А» соответствует формула 1. Во второй формуле равенство неверное: 0 = 48. По остаточному принципу определяем, что к параболе «Б» относится формула 2.</p>
+                </div>
+                
+                <!-- ФОТО 10: media/image10.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Графики (продолжение)</div>
+                    <img src="media2/image10.png" alt="Графики" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 11: media/image11.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Графики функций</div>
+                    <img src="media2/image11.png" alt="Графики функций" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 12: media/image12.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Графики (продолжение)</div>
+                    <img src="media2/image12.png" alt="Графики продолжение" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 13: media/image13.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Графики (завершение)</div>
+                    <img src="media2/image13.png" alt="Графики завершение" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ФОТО 14: media/image14.png -->
+                <div class="figure-card">
+                    <div class="figure-title">Дополнительные графики</div>
+                    <img src="media2/image14.png" alt="Дополнительные графики" class="figure-img" onerror="this.style.display='none'">
+                </div>
+                
+                <!-- ========== ПАМЯТКА ========== -->
+                <div class="highlight-block">
+                    <p><strong>Краткая памятка по функциям:</strong></p>
+                    <ul class="step-list">
+                        <li><strong>Линейная функция y = kx + b</strong> — прямая линия. k > 0 — возрастает, k < 0 — убывает. b — точка пересечения с осью OY.</li>
+                        <li><strong>Квадратичная функция y = ax² + bx + c</strong> — парабола. a > 0 — ветви вверх, a < 0 — ветви вниз. c — точка пересечения с осью OY.</li>
+                        <li><strong>Вершина параболы</strong> — x₀ = -b/(2a), y₀ = ax₀² + bx₀ + c.</li>
+                        <li>Чтобы определить знак коэффициента b, можно взять любую точку на графике и подставить в формулу.</li>
+                        <li>Графики читаются слева направо.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">← Вернуться на главную</a>
+        </div>
+    </main>
+
+    <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <div id="referenceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeReference()">&times;</span>
+            <h2 class="ref-title">СПРАВОЧНЫЕ МАТЕРИАЛЫ</h2>
+           <img src="images/справочные материалы 5.jpg" alt="Справочные" style="width: 910px; height: auto;">
+
+    <script>
+        function openReference() {
+            document.getElementById('referenceModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeReference() {
+            document.getElementById('referenceModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        window.onclick = function(e) {
+            let modal = document.getElementById('referenceModal');
+            if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+        };
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                let modal = document.getElementById('referenceModal');
+                if (modal.style.display === 'block') { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+            }
+        });
+        window.addEventListener('scroll', function() {
+            let btn = document.getElementById('backToTopBtn');
+            if (window.scrollY > 400) btn.classList.add('show');
+            else btn.classList.remove('show');
+        });
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    </script>
+</body>
+</html>

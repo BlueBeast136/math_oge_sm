@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОГЭ Алгебра | Задание №12</title>
+    <!-- Подключаем внешний CSS файл -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для страницы задания */
+        .instruction-section {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .instruction-title {
+            font-size: 36px;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+        }
+        
+        .instruction-block {
+            padding: 20px 0;
+        }
+        
+        /* Мягкие текстовые блоки */
+        .text-block {
+            background: #fafaff;
+            border-radius: 24px;
+            padding: 28px 32px;
+            margin: 24px 0;
+            line-height: 1.7;
+            font-size: 20px;
+            color: #2c3e50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid #eef2ff;
+        }
+        
+        .text-block p {
+            margin: 0 0 12px 0;
+        }
+        
+        .text-block p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight-block {
+            background: #fffaf0;
+            border-left: 4px solid #ffd966;
+            border-radius: 16px;
+            padding: 20px 28px;
+            margin: 24px 0;
+            font-size: 20px;
+            color: #7b5e2c;
+            line-height: 1.6;
+        }
+        
+        .example-card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px 32px;
+            margin: 28px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e9ecef;
+        }
+        
+        .example-card p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #1e293b;
+            margin: 12px 0;
+        }
+        
+        .formula {
+            font-size: 26px;
+            font-weight: 600;
+            color: #667eea;
+            text-align: center;
+            padding: 16px 20px;
+            background: #f8f9ff;
+            border-radius: 20px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            letter-spacing: 1px;
+        }
+        
+        .step-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        
+        .step-list li {
+            margin: 16px 0;
+            padding: 12px 0 12px 32px;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .step-list li::before {
+            content: "•";
+            color: #667eea;
+            font-size: 28px;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+        
+        .advice-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 32px 0;
+        }
+        
+        .advice-item {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 20px 28px;
+            border-left: 4px solid #667eea;
+            transition: all 0.2s ease;
+        }
+        
+        .advice-item:hover {
+            transform: translateX(6px);
+            background: #f1f5f9;
+        }
+        
+        .advice-number {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .advice-text {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #475569;
+        }
+        
+        .quote-block {
+            background: #fef9e6;
+            border-radius: 20px;
+            padding: 24px 32px;
+            margin: 24px 0;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #5e4b2e;
+            font-style: normal;
+        }
+        
+        .back-button {
+            margin-top: 40px;
+            padding: 14px 36px;
+            font-size: 22px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-decoration: none;
+            display: inline-block;
+            border: 1px solid #e0e7ff;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.15);
+            border-color: #cbd5e1;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 64px;
+            height: 64px;
+            background: #ffffff;
+            color: #667eea;
+            border: 1px solid #e2e8f0;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #f1f5f9;
+            transform: translateY(-4px);
+        }
+        
+        @media (max-width: 768px) {
+            .instruction-section {
+                padding: 24px;
+            }
+            .text-block, .example-card {
+                padding: 20px;
+            }
+            .formula {
+                font-size: 22px;
+            }
+            .advice-item {
+                padding: 16px 20px;
+            }
+            .back-to-top {
+                width: 52px;
+                height: 52px;
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="site-title">ОГЭ Математика</div>
+        <button class="ref-button" onclick="openReference()">📚 Справочные материалы</button>
+    </header>
+
+    <main class="main-content">
+        <h1 class="main-title">Задание №12</h1>
+        
+        <div class="instruction-section">
+            <h2 class="instruction-title">📝 Инструкция к выполнению задания №12</h2>
+            
+            <div class="instruction-block">
+                <div class="quote-block">
+                    <p>В задании 12 предстоит продемонстрировать умение расчёта по формулам.</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>Плюс этого задания в том, что все необходимые формулы и данные для вычисления содержатся в формулировке. Минусов у данного задания нет, поэтому не стоит упускать возможность заработать лёгкий балл.</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>Всё, что Вам нужно сделать – внимательно прочитать задание. Да, такой трюк необходимо проделывать с каждым заданием, поэтому учитесь внимательно читать.</p>
+                </div>
+                
+                <div class="text-block">
+                    <p><strong>📌 Универсальные советы, чтобы было легче решать подобные задания:</strong></p>
+                </div>
+                
+                <div class="advice-grid">
+                    <div class="advice-item">
+                        <div class="advice-number">Совет 1</div>
+                        <div class="advice-text">Читать любые задачи лучше всего небольшими частями либо до точки, либо запятой. Так информация усваивается лучше.</div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-number">Совет 2</div>
+                        <div class="advice-text">После того как прочитали небольшой кусочек текста, обязательно ответьте себе на вопрос: какие данные там содержатся.</div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-number">Совет 3</div>
+                        <div class="advice-text">Подставьте все числовые значения в формулу.</div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-number">Совет 4</div>
+                        <div class="advice-text">Упрощайте выражение частями.</div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-number">Совет 5</div>
+                        <div class="advice-text">Если помимо слагаемого с переменной есть другие, надо их перенести за знак равенства с противоположным знаком.</div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-number">Совет 6</div>
+                        <div class="advice-text">Если ваша переменная делится на число – умножьте на это же число всё уравнение целиком, если переменная умножается – делите.</div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-number">Совет 7</div>
+                        <div class="advice-text">Если нужно избавиться от второй степени — на обе части уравнения «накидываются» квадратные корни, если переменную надо извлечь из-под знака квадратного корня – возводим обе части уравнения в квадрат.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">← Вернуться на главную</a>
+        </div>
+    </main>
+
+    <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <!-- Модальное окно -->
+    <div id="referenceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeReference()">&times;</span>
+            <h2 class="ref-title">СПРАВОЧНЫЕ МАТЕРИАЛЫ ПО МАТЕМАТИКЕ</h2>
+            <img src="images/справочные материалы.jpg" alt="Справочные" style="width: 910px; height: auto;">
+    <script>
+        function openReference() {
+            document.getElementById('referenceModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeReference() {
+            document.getElementById('referenceModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById('referenceModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        };
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                let modal = document.getElementById('referenceModal');
+                if (modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+        
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backToTopBtn');
+            if (window.scrollY > 400) btn.classList.add('show');
+            else btn.classList.remove('show');
+        });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
