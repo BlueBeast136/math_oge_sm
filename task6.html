@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ОГЭ Алгебра | Задание №6</title>
-    <!-- Подключаем внешний CSS файл -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Дополнительные стили для страницы задания */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         .instruction-section {
             background: white;
             border-radius: 30px;
@@ -26,92 +30,103 @@
         }
         
         .instruction-block {
-            background: #f8f9fa;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-left: 5px solid #667eea;
+            padding: 20px 0;
         }
         
-        .instruction-block h3 {
-            font-size: 28px;
-            color: #764ba2;
-            margin-bottom: 20px;
-        }
-        
-        .instruction-text {
+        .text-block {
+            background: #fafaff;
+            border-radius: 24px;
+            padding: 28px 32px;
+            margin: 24px 0;
+            line-height: 1.7;
             font-size: 20px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
+            color: #2c3e50;
+            border: 1px solid #eef2ff;
         }
         
-        .example-box {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 2px dashed #667eea;
+        .highlight-block {
+            background: #fffaf0;
+            border-left: 4px solid #ffd966;
+            border-radius: 16px;
+            padding: 20px 28px;
+            margin: 24px 0;
+            font-size: 20px;
+            color: #7b5e2c;
         }
         
-        .example-box p {
-            font-size: 22px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        
-        .example-box .formula {
-            font-size: 28px;
-            color: #667eea;
-            font-weight: 600;
-            text-align: center;
-            padding: 15px;
-            background: #f0f4ff;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            margin: 15px 0;
-        }
-        
-        .important-note {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
+        .figure-card {
+            background: #fefefe;
+            border-radius: 24px;
             padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        
-        .important-note p {
-            font-size: 20px;
-            color: #856404;
-        }
-        
-        /* Стили для математических рисунков */
-        .math-drawing {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
             margin: 30px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         
-        .drawing-title {
+        .figure-title {
             font-size: 22px;
+            font-weight: 600;
             color: #667eea;
             margin-bottom: 20px;
-            font-weight: 600;
             text-align: center;
         }
         
-        /* Стиль для дроби */
+        .figure-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .img-caption {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .formula {
+            font-size: 28px;
+            font-weight: 600;
+            color: #667eea;
+            text-align: center;
+            padding: 16px 20px;
+            background: #f8f9ff;
+            border-radius: 20px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+        }
+        
+        .step-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        
+        .step-list li {
+            margin: 16px 0;
+            padding: 12px 0 12px 32px;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .step-list li::before {
+            content: "•";
+            color: #667eea;
+            font-size: 28px;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+        
         .fraction {
             display: inline-flex;
             flex-direction: column;
             align-items: center;
-            margin: 0 10px;
-            position: relative;
+            vertical-align: middle;
         }
         
         .fraction .top {
@@ -119,7 +134,6 @@
             font-weight: 600;
             color: #333;
             padding: 0 10px;
-            margin-bottom: 5px;
         }
         
         .fraction .bottom {
@@ -129,168 +143,67 @@
             padding: 0 10px;
             border-top: 3px solid #333;
             padding-top: 5px;
+            margin-top: 5px;
         }
         
-        /* Терминология */
-        .terminology-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .term-item {
-            text-align: center;
-        }
-        
-        .term-label {
-            font-size: 24px;
-            font-weight: 700;
-            color: #667eea;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        
-        .term-value {
-            font-size: 48px;
-            font-weight: 700;
-            color: #333;
-            background: #f0f4ff;
-            padding: 15px 30px;
-            border-radius: 15px;
-            border: 3px solid #667eea;
-        }
-        
-        .fraction-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 48px;
-            font-weight: 700;
-            color: #333;
-        }
-        
-        .fraction-line {
-            width: 80px;
-            height: 4px;
-            background: #333;
-            margin: 10px 0;
-        }
-        
-        /* Зачеркивания */
-        .canceling-item {
-            position: relative;
-            display: inline-block;
-            background: #f8f9fa;
-            padding: 15px 25px;
-            border-radius: 10px;
-            margin: 10px;
-        }
-        
-        .cancel-line {
-            position: absolute;
-            top: 50%;
-            left: 5%;
-            width: 90%;
-            height: 3px;
-            background: #ff4444;
-            transform: rotate(-5deg);
-        }
-        
-        .cancel-number {
-            position: absolute;
-            top: -15px;
-            right: -10px;
-            background: #ff4444;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 18px;
+        .operation {
+            font-size: 40px;
             font-weight: 600;
-        }
-        
-        /* Таблицы */
-        .steps-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .steps-table td {
-            padding: 20px;
-            border: 1px solid #e0e0e0;
-            font-size: 20px;
+            color: #764ba2;
+            margin: 0 15px;
+            display: inline-flex;
+            align-items: center;
             vertical-align: middle;
         }
         
-        .steps-table tr:first-child {
-            background: #667eea;
-            color: white;
+        .equals {
+            font-size: 40px;
             font-weight: 600;
+            color: #ffd700;
+            margin: 0 15px;
+            display: inline-flex;
+            align-items: center;
+            vertical-align: middle;
         }
         
-        .steps-table tr:first-child td {
-            border-color: #5566cc;
-        }
-        
-        /* Десятичные дроби */
-        .decimal-example {
-            font-family: 'Courier New', monospace;
-            font-size: 28px;
-            background: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 10px;
-        }
-        
-        /* Кнопка назад */
         .back-button {
             margin-top: 40px;
-            padding: 15px 40px;
-            font-size: 24px;
+            padding: 14px 36px;
+            font-size: 22px;
             background: white;
             color: #667eea;
             border: none;
-            border-radius: 50px;
+            border-radius: 60px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             text-decoration: none;
             display: inline-block;
-            border: 2px solid transparent;
+            border: 1px solid #e0e7ff;
         }
         
         .back-button:hover {
-            transform: translateY(-5px);
-            border-color: #ffd700;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.15);
         }
         
-        /* Кнопка для поднятия вверх */
         .back-to-top {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: 3px solid #ffd700;
+            width: 64px;
+            height: 64px;
+            background: #ffffff;
+            color: #667eea;
+            border: 1px solid #e2e8f0;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
-            font-weight: bold;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
             z-index: 999;
             opacity: 0;
             visibility: hidden;
@@ -302,608 +215,401 @@
         }
         
         .back-to-top:hover {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, #764ba2, #667eea);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            background: #f1f5f9;
+            transform: translateY(-4px);
         }
         
-        .back-to-top:active {
-            transform: scale(0.95);
-        }
-        
-        /* Для мобильных */
         @media (max-width: 768px) {
-            .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 60px;
-                height: 60px;
-                font-size: 30px;
+            .instruction-section {
+                padding: 24px;
             }
-            
-            .terminology-box {
-                gap: 20px;
+            .fraction .top, .fraction .bottom {
+                font-size: 28px;
             }
-            
-            .term-value {
-                font-size: 36px;
-                padding: 10px 20px;
+            .operation, .equals {
+                font-size: 32px;
+                margin: 0 8px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- === ШАПКА С НАЗВАНИЕМ СЛЕВА И КНОПКОЙ СПРАВОЧНЫХ МАТЕРИАЛОВ СПРАВА === -->
     <header class="header">
         <div class="site-title">ОГЭ Математика</div>
         <button class="ref-button" onclick="openReference()">Справочные материалы</button>
     </header>
 
-    <!-- === ОСНОВНОЙ КОНТЕНТ === -->
     <main class="main-content">
-        <!-- Заголовок страницы -->
         <h1 class="main-title">Задание №6</h1>
         
-        <!-- ИНСТРУКЦИЯ К ВЫПОЛНЕНИЮ -->
         <div class="instruction-section">
-            <h2 class="instruction-title">Инструкция к выполнению задания №6</h2>
+            <h2 class="instruction-title">Инструкция к выполнению</h2>
             
-            <!-- Блок 1: Что такое дробь -->
             <div class="instruction-block">
-                <h3>➗ Что такое обыкновенная дробь?</h3>
-                <div class="instruction-text">
-                    <p>Дробь – это незавершённое деление двух чисел, как правило, деление не получится довести до конца, как бы не хотелось. Например, если делить 3 на 7 столбиком, как учили в третьем классе, то можно делать это бесконечно долго, но к конечному результату это не приведёт.</p>
+                <!-- ========== ОБЫКНОВЕННЫЕ ДРОБИ ========== -->
+                <div class="text-block">
+                    <p><strong>Обыкновенные дроби</strong></p>
+                    <p>Дробь — это деление двух чисел, как правило незавершённое, потому что деление не получится довести до конца, как бы не хотелось. Например, если делить 3 на 7 столбиком, то к конечному результату это не приведёт.</p>
                     
-                    <div class="math-drawing">
-                        <div class="drawing-title">Пример бесконечной дроби:</div>
-                        <div style="text-align: center; font-size: 36px;">
-                            <span class="fraction">
-                                <span class="top">3</span>
-                                <span class="bottom">7</span>
-                            </span>
-                            <span style="font-size: 48px; margin: 0 20px;">=</span>
-                            <span style="color: #667eea; font-family: monospace;">0,428571428571...</span>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin: 20px 0;">
+                        <div class="fraction">
+                            <span class="top">3</span>
+                            <span class="bottom">7</span>
                         </div>
+                        <span class="equals">=</span>
+                        <span style="font-size: 32px; font-family: monospace; color: #667eea;">0,428571428571...</span>
                     </div>
                     
-                    <p>К тому же, с такими длинными числами не удобно работать. Поэтому, число 3 удобнее оставить в виде дроби 3/7.</p>
-                </div>
-            </div>
-            
-            <!-- Блок 2: Терминология -->
-            <div class="instruction-block">
-                <h3>Терминология</h3>
-                <div class="instruction-text">
-                    <p>Познакомимся с терминологией, если по каким-то причинам эти знания упущены: число над дробной чертой называют <strong>числитель</strong>, под чертой – <strong>знаменатель</strong>.</p>
-                    
-                    <div class="math-drawing">
-                        <div class="terminology-box">
-                            <div class="term-item">
-                                <div class="term-label">ЧИСЛИТЕЛЬ</div>
-                                <div class="term-value">3</div>
-                            </div>
-                            
-                            <div class="fraction-center">
-                                <div>3</div>
-                                <div class="fraction-line"></div>
-                                <div>7</div>
-                            </div>
-                            
-                            <div class="term-item">
-                                <div class="term-label">ЗНАМЕНАТЕЛЬ</div>
-                                <div class="term-value">7</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p>Если числитель дроби меньше, чем знаменатель, то дробь называют <strong>правильной</strong>, напротив - <strong>неправильной</strong>. У таких дробей принято выделять целую часть только при сложении и вычитании.</p>
-                </div>
-            </div>
-            
-            <!-- Блок 3: Основное свойство дроби -->
-            <div class="instruction-block">
-                <h3>Основное свойство дроби</h3>
-                <div class="important-note">
-                    <p><strong>❗ Числитель и знаменатель дроби можно одновременно целиком делить или умножать на одно и тоже число. Значение дроби при этом не изменится.</strong></p>
+                    <p>К тому же, с такими длинными числами не удобно работать. Поэтому, число 3/7 удобнее оставить в виде дроби.</p>
                 </div>
                 
-                <div class="instruction-text">
+                <!-- Терминология -->
+                <div class="text-block">
+                    <p>Познакомимся с терминологией: число над дробной чертой называют <strong>числитель</strong>, под чертой — <strong>знаменатель</strong>.</p>
+                     Если числитель дроби меньше, чем знаменатель, то дробь называют <strong>правильной</strong>, напротив — <strong>неправильной</strong>.</p>
+                </div>
+
+                
+                <!-- Основное свойство дроби -->
+                <div class="text-block">
+                    <p>У дробей есть, так называемое, «основное свойство»:</p>
+                </div>
+                <div class="highlight-block">
+                    <p><strong>❗ Числитель и знаменатель дроби можно одновременно целиком делить или умножать на одно и то же число. Значение дроби при этом не изменится.</strong></p>
+                </div>
+                
+                <div class="text-block">
                     <p>Этим свойством удобно пользоваться при умножении или делении дробей. Рассмотрим следующий пример:</p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;">
+                        <div class="fraction"><span class="top">6</span><span class="bottom">7</span></div>
+                        <span class="operation">÷</span>
+                        <div class="fraction"><span class="top">15</span><span class="bottom">21</span></div>
+                    </div>
+                    <p>Так как дроби здесь делятся, сначала нам необходимо перевернуть вторую дробь, а затем умножать их друг на друга:</p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;">
+                        <div class="fraction"><span class="top">6</span><span class="bottom">7</span></div>
+                        <span class="operation">×</span>
+                        <div class="fraction"><span class="top">21</span><span class="bottom">15</span></div>
+                        <span class="equals">=</span>
+                        <div class="fraction"><span class="top">6 × 21</span><span class="bottom">7 × 15</span></div>
+                    </div>
                 </div>
                 
-                <div class="math-drawing">
-                    <div style="text-align: center; font-size: 36px; margin: 20px 0;">
-                        <span class="fraction">
-                            <span class="top">6</span>
-                            <span class="bottom">7</span>
-                        </span>
-                        <span style="font-size: 40px; margin: 0 15px;">÷</span>
-                        <span class="fraction">
-                            <span class="top">15</span>
-                            <span class="bottom">21</span>
-                        </span>
+                <div class="figure-card">
+                    <p>На этом этапе заметим, что числа 7 и 21 оба делятся на 7. Так как они находятся с разных сторон от дробной черты, то воспользуемся основным свойством дроби и разделим числитель и знаменатель на 7:</p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;">
+                        <span class="equals">=</span>
+                        <div class="fraction"><span class="top">6 × 3</span><span class="bottom">1 × 15</span></div>
                     </div>
-                    
-                    <p style="font-size: 22px; margin: 20px 0;">Так как дроби здесь делятся, сначала нам необходимо перевернуть вторую дробь, а затем умножать их друг на друга:</p>
-                    
-                    <div style="text-align: center; font-size: 36px; margin: 20px 0;">
-                        <span class="fraction">
-                            <span class="top">6</span>
-                            <span class="bottom">7</span>
-                        </span>
-                        <span style="font-size: 40px; margin: 0 15px;">×</span>
-                        <span class="fraction">
-                            <span class="top">21</span>
-                            <span class="bottom">15</span>
-                        </span>
-                        <span style="font-size: 40px; margin: 0 15px;">=</span>
-                        <span class="fraction">
-                            <span class="top">6 × 21</span>
-                            <span class="bottom">7 × 15</span>
-                        </span>
+                    <p>Выражение сильно упрощается, но если внимательно посмотреть на результат, то становится понятно, что необходимо ещё раз применить основное свойство дроби, но уже с числами 3 и 15:</p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;">
+                        <span class="equals">=</span>
+                        <div class="fraction"><span class="top">6 × 1</span><span class="bottom">1 × 5</span></div>
+                        <span class="equals">=</span>
+                        <div class="fraction"><span class="top">6</span><span class="bottom">5</span></div>
                     </div>
-                    
-                    <p style="font-size: 22px; margin: 20px 0;">На этом этапе заметим, что числа 7 и 21 оба делятся на 7. Так как они находятся с разных сторон от дробной черты, то воспользуемся основным свойством дроби и разделим числитель и знаменатель на 7:</p>
-                    
-                    <div style="text-align: center; font-size: 36px; margin: 20px 0;">
-                        <span style="position: relative; display: inline-block;">
-                            <span class="fraction">
-                                <span class="top">6 × 21</span>
-                                <span class="bottom">7 × 15</span>
-                            </span>
-                            <span style="position: absolute; top: -10px; right: -10px; background: #ff4444; color: white; padding: 5px 10px; border-radius: 20px; font-size: 18px;">:7</span>
-                            <span style="position: absolute; bottom: 10px; left: -10px; background: #ff4444; color: white; padding: 5px 10px; border-radius: 20px; font-size: 18px;">:7</span>
-                        </span>
-                        <span style="font-size: 40px; margin: 0 15px;">=</span>
-                        <span class="fraction">
-                            <span class="top">6 × 3</span>
-                            <span class="bottom">1 × 15</span>
-                        </span>
-                    </div>
-                    
-                    <p style="font-size: 22px; margin: 20px 0;">Затем 6 и 15 делятся на 3:</p>
-                    
-                    <div style="text-align: center; font-size: 36px; margin: 20px 0;">
-                        <span style="position: relative; display: inline-block;">
-                            <span class="fraction">
-                                <span class="top">6 × 3</span>
-                                <span class="bottom">1 × 15</span>
-                            </span>
-                            <span style="position: absolute; top: -10px; right: -10px; background: #ff4444; color: white; padding: 5px 10px; border-radius: 20px; font-size: 18px;">:3</span>
-                            <span style="position: absolute; bottom: 10px; left: -10px; background: #ff4444; color: white; padding: 5px 10px; border-radius: 20px; font-size: 18px;">:3</span>
-                        </span>
-                        <span style="font-size: 40px; margin: 0 15px;">=</span>
-                        <span class="fraction">
-                            <span class="top">6 × 1</span>
-                            <span class="bottom">1 × 5</span>
-                        </span>
-                        <span style="font-size: 40px; margin: 0 15px;">=</span>
-                        <span class="fraction">
-                            <span class="top">6</span>
-                            <span class="bottom">5</span>
-                        </span>
-                    </div>
-                    
-                    <p style="font-size: 22px;">Теперь вместо огромных чисел, которые мы бы получили, имеем красивую маленькую дробь. Далее делим столбиком 6 на 5, и то, что получилось, записываем в бланк ответов.</p>
+                    <p>Теперь вместо огромных чисел, которые мы бы получили, имеем красивую маленькую дробь. Далее делим столбиком 6 на 5, и то, что получилось, записываем в бланк ответов.</p>
                 </div>
-            </div>
-            
-            <!-- Блок 4: Сложение и вычитание дробей -->
-            <div class="instruction-block">
-                <h3>➕ Сложение и вычитание дробей с разными знаменателями</h3>
                 
-                <div class="important-note">
+                <!-- Сложение и вычитание дробей -->
+                <div class="text-block">
                     <p><strong>Алгоритм действий:</strong></p>
-                    <p>1 Найдём общий знаменатель для дробей</p>
-                    <p>2 Домножим дроби на недостающие множители</p>
-                    <p>3 Запишем выражение в одну дробь</p>
-                    <p>4 Сократим ответ, если это необходимо</p>
-                    <p>5 Приведём ответ в вид десятичной дроби, если задание не требует иного</p>
+                    <ul class="step-list">
+                        <li>Найдём общий знаменатель для дробей</li>
+                        <li>Домножим дроби на недостающие множители</li>
+                        <li>Запишем выражение в одну дробь</li>
+                        <li>Сократим ответ, если это необходимо</li>
+                        <li>Приведём ответ в вид десятичной дроби, если задание не требует иного</li>
+                    </ul>
                 </div>
                 
-                <div class="math-drawing">
-                    <div class="drawing-title">Пример: 3/8 + 1/10</div>
+                <div class="figure-card">
+                    <div class="figure-title">Пример: 3/8 + 1/10</div>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;">
+                        <div class="fraction"><span class="top">3</span><span class="bottom">8</span></div>
+                        <span class="operation">+</span>
+                        <div class="fraction"><span class="top">1</span><span class="bottom">10</span></div>
+                    </div>
                     
-                    <p style="font-size: 22px;">Знаменателями этих дробей являются числа 8 и 10. Их общий знаменатель должен делиться на 8 и 10 без остатка. Например, число 80 делится и на 8, и на 10 без остатка, но и число 40 тоже подходит. Решим пример через оба знаменателя, и посмотрим, в чём разница.</p>
+                    <p>Знаменателями этих дробей являются числа 8 и 10. Их общий знаменатель должен делиться на 8 и 10 без остатка. Например, число 80 делится и на 8, и на 10 без остатка, но и число 40 тоже подходит.</p>
                     
-                    <table class="steps-table">
-                        <tr>
-                            <td>Шаг</td>
-                            <td>Со знаменателем 80</td>
-                            <td>Со знаменателем 40</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <span class="fraction">
-                                    <span class="top">3 × 10</span>
-                                    <span class="bottom">8 × 10</span>
-                                </span>
-                                <span style="margin: 0 10px;">+</span>
-                                <span class="fraction">
-                                    <span class="top">1 × 8</span>
-                                    <span class="bottom">10 × 8</span>
-                                </span>
-                            </td>
-                            <td>
-                                <span class="fraction">
-                                    <span class="top">3 × 5</span>
-                                    <span class="bottom">8 × 5</span>
-                                </span>
-                                <span style="margin: 0 10px;">+</span>
-                                <span class="fraction">
-                                    <span class="top">1 × 4</span>
-                                    <span class="bottom">10 × 4</span>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>
-                                <span class="fraction">
-                                    <span class="top">30</span>
-                                    <span class="bottom">80</span>
-                                </span>
-                                <span style="margin: 0 10px;">+</span>
-                                <span class="fraction">
-                                    <span class="top">8</span>
-                                    <span class="bottom">80</span>
-                                </span>
-                            </td>
-                            <td>
-                                <span class="fraction">
-                                    <span class="top">15</span>
-                                    <span class="bottom">40</span>
-                                </span>
-                                <span style="margin: 0 10px;">+</span>
-                                <span class="fraction">
-                                    <span class="top">4</span>
-                                    <span class="bottom">40</span>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>
-                                <span class="fraction">
-                                    <span class="top">30 + 8</span>
-                                    <span class="bottom">80</span>
-                                </span>
-                                <span style="margin: 0 10px;">=</span>
-                                <span class="fraction">
-                                    <span class="top">38</span>
-                                    <span class="bottom">80</span>
-                                </span>
-                            </td>
-                            <td>
-                                <span class="fraction">
-                                    <span class="top">15 + 4</span>
-                                    <span class="bottom">40</span>
-                                </span>
-                                <span style="margin: 0 10px;">=</span>
-                                <span class="fraction">
-                                    <span class="top">19</span>
-                                    <span class="bottom">40</span>
-                                </span>
-                            </td>
-                        </tr>
-                    </table>
+                    <p><strong>Первый шаг:</strong></p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <div class="fraction"><span class="top">3×10</span><span class="bottom">8×10</span></div>
+                        <span class="operation">+</span>
+                        <div class="fraction"><span class="top">1×8</span><span class="bottom">10×8</span></div>
+                        <span style="font-size: 32px; margin: 0 15px;">и</span>
+                        <div class="fraction"><span class="top">3×5</span><span class="bottom">8×5</span></div>
+                        <span class="operation">+</span>
+                        <div class="fraction"><span class="top">1×4</span><span class="bottom">10×4</span></div>
+                    </div>
                     
-                    <p style="font-size: 22px;">Заметим, что в случае со знаменателем 80 в конце третьего шага дробь состоит из бóльших чисел, в отличии от решения со знаменателем 40, а с меньшими числами работать проще. К тому же, дробь необходимо сократить, в то время как этого действия не требует. Отсюда делаем вывод, что брать наименьший общий знаменатель удобнее.</p>
+                    <p><strong>Второй шаг:</strong></p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <div class="fraction"><span class="top">30</span><span class="bottom">80</span></div>
+                        <span class="operation">+</span>
+                        <div class="fraction"><span class="top">8</span><span class="bottom">80</span></div>
+                        <span style="font-size: 32px; margin: 0 15px;">и</span>
+                        <div class="fraction"><span class="top">15</span><span class="bottom">40</span></div>
+                        <span class="operation">+</span>
+                        <div class="fraction"><span class="top">4</span><span class="bottom">40</span></div>
+                    </div>
                     
-                    <div style="text-align: center; font-size: 36px; margin: 20px 0;">
-                        <span class="fraction">
-                            <span class="top">38</span>
-                            <span class="bottom">80</span>
-                        </span>
-                        <span style="font-size: 40px; margin: 0 15px;">=</span>
-                        <span style="position: relative;">
-                            <span class="fraction">
-                                <span class="top">38:2</span>
-                                <span class="bottom">80:2</span>
-                            </span>
-                        </span>
-                        <span style="font-size: 40px; margin: 0 15px;">=</span>
-                        <span class="fraction">
-                            <span class="top">19</span>
-                            <span class="bottom">40</span>
-                        </span>
-                        <span style="font-size: 40px; margin: 0 15px;">=</span>
-                        <span style="color: #667eea; font-size: 32px;">0,475</span>
+                    <p><strong>Третий шаг:</strong></p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <div class="fraction"><span class="top">38</span><span class="bottom">80</span></div>
+                        <span style="font-size: 32px; margin: 0 15px;">и</span>
+                        <div class="fraction"><span class="top">19</span><span class="bottom">40</span></div>
+                    </div>
+                    
+                    <p>Заметим, что в случае со знаменателем 80 в конце третьего шага дробь состоит из бóльших чисел, в отличии от решения со знаменателем 40. Отсюда делаем вывод, что брать наименьший общий знаменатель удобнее.</p>
+                    
+                    <p><strong>Четвёртый шаг:</strong></p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                        <div class="fraction"><span class="top">38:2</span><span class="bottom">80:2</span></div>
+                        <span class="equals">=</span>
+                        <div class="fraction"><span class="top">19</span><span class="bottom">40</span></div>
+                    </div>
+                    
+                    <p><strong>Пятый шаг:</strong></p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                        <span>19 : 40 =</span>
+                        <span style="font-size: 32px; color: #667eea;">0,475</span>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Блок 5: Трёхэтажные дроби -->
-            <div class="instruction-block">
-                <h3>Трёхэтажные дроби</h3>
                 
-                <div class="instruction-text">
-                    <p>Если встретилась, так называемая, «трёхэтажная дробь» - помните, что любую дробную черту всегда можно заменить на обычный и привычный знак деления:</p>
-                </div>
-                
-                <div class="math-drawing">
-                    <div style="text-align: center; font-size: 48px;">
-                        <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <div style="border-bottom: 3px solid #333; padding: 0 20px 10px 20px;">1</div>
-                                <div style="padding: 10px 20px 0 20px;">2</div>
-                                <div style="border-top: 3px solid #333; padding: 10px 20px 0 20px; margin-top: 10px;">3</div>
-                                <div style="padding: 0 20px;">5</div>
-                            </div>
-                            <span style="font-size: 48px;">=</span>
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <span class="fraction">
-                                    <span class="top">1</span>
-                                    <span class="bottom">2</span>
-                                </span>
-                                <span style="font-size: 40px;">÷</span>
-                                <span class="fraction">
-                                    <span class="top">3</span>
-                                    <span class="bottom">5</span>
-                                </span>
-                            </div>
-                            <span style="font-size: 48px;">=</span>
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <span class="fraction">
-                                    <span class="top">1</span>
-                                    <span class="bottom">2</span>
-                                </span>
-                                <span style="font-size: 40px;">×</span>
-                                <span class="fraction">
-                                    <span class="top">5</span>
-                                    <span class="bottom">3</span>
-                                </span>
+                <!-- Трёхэтажные дроби -->
+                <div class="text-block">
+                    <p>Если встретилась, так называемая, «трёхэтажная дробь» — помните, что любую дробную черту всегда можно заменить на обычный и привычный знак деления:</p>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin: 20px 0;">
+                        <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                            <div style="font-size: 32px;">1</div>
+                            <div style="width: 60px; height: 2px; background: #333; margin: 5px 0;"></div>
+                            <div style="display: inline-flex; flex-direction: column; align-items: center;">
+                                <div style="font-size: 28px;">2</div>
+                                <div style="width: 40px; height: 2px; background: #333; margin: 3px 0;"></div>
+                                <div style="font-size: 28px;">5</div>
                             </div>
                         </div>
+                        <span class="equals">=</span>
+                        <span style="font-size: 32px;">1 : 2/5</span>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Блок 6: Смешанные числа -->
-            <div class="instruction-block">
-                <h3>Смешанные числа</h3>
                 
-                <div class="instruction-text">
-                    <p>Если на экзамене попадается число такого вида: 2 3/7, то это - смешанное число. У него одновременно есть и целая и дробная части, причем они складываются друг с другом.</p>
+                <!-- Смешанные числа -->
+                <div class="text-block">
+                    <p><strong>Смешанные числа</strong></p>
+                    <p>Если на экзамене попадается число такого вида: 2 3/7, то это — смешанное число. У него одновременно есть и целая и дробная части, причем они складываются друг с другом.</p>
+                    <p>Если в ходе примера такие числа надо сложить или вычесть, то в вид неправильной дроби их лучше не приводить. Дробная и целая части решаются отдельно, причем сначала решается дробная.</p>
                     
-                    <p>Если в ходе примера такие числа надо сложить или вычесть, то в вид неправильной дроби их лучше не приводить. Дробная и целая части решаются отдельно, причем сначала решается дробная. Это нужно из-за случая, когда из первой дроби невозможно вычесть вторую:</p>
-                </div>
-                
-                <div class="math-drawing">
-                    <div style="text-align: center; font-size: 36px; margin: 20px 0;">
-                        <span style="display: inline-flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 48px;">2</span>
-                            <span class="fraction">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 20px 0;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 48px; font-weight: 600;">2</span>
+                            <div class="fraction">
                                 <span class="top">3</span>
                                 <span class="bottom">7</span>
-                            </span>
-                        </span>
-                        <span style="margin: 0 20px;">-</span>
-                        <span style="display: inline-flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 48px;">1</span>
-                            <span class="fraction">
+                            </div>
+                        </div>
+                        <span class="operation">-</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 48px; font-weight: 600;">1</span>
+                            <div class="fraction">
                                 <span class="top">5</span>
                                 <span class="bottom">7</span>
-                            </span>
-                        </span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div style="text-align: center; font-size: 32px; margin: 20px 0;">
-                        = (1 + 1) <span class="fraction"><span class="top">3</span><span class="bottom">7</span></span> - 1 <span class="fraction"><span class="top">5</span><span class="bottom">7</span></span>
+                    <p>В этом случае единица из целой части превращается в дробь, которая прибавляется к дробной части:</p>
+                    
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 20px 0;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 48px; font-weight: 600;">2</span>
+                            <div class="fraction"><span class="top">3</span><span class="bottom">7</span></div>
+                        </div>
+                        <span class="operation">-</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 48px; font-weight: 600;">1</span>
+                            <div class="fraction"><span class="top">5</span><span class="bottom">7</span></div>
+                        </div>
+                        <span class="equals">=</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 48px; font-weight: 600;">1</span>
+                            <div class="fraction"><span class="top">10</span><span class="bottom">7</span></div>
+                        </div>
+                        <span class="operation">-</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 48px; font-weight: 600;">1</span>
+                            <div class="fraction"><span class="top">5</span><span class="bottom">7</span></div>
+                        </div>
+                        <span class="equals">=</span>
+                        <div class="fraction"><span class="top">5</span><span class="bottom">7</span></div>
                     </div>
                     
-                    <div style="text-align: center; font-size: 32px; margin: 20px 0;">
-                        = 1 <span class="fraction"><span class="top">7 + 3</span><span class="bottom">7</span></span> - 1 <span class="fraction"><span class="top">5</span><span class="bottom">7</span></span>
-                    </div>
+                    <p>Умножать и делить смешанные числа можно только после того, как они будут переведены в неправильные дроби:</p>
                     
-                    <p style="font-size: 22px; margin-top: 20px;">В этом случае единица из целой части превращается в дробь, которая прибавляется к дробной части. Таким образом, из первой дроби теперь можно вычесть вторую, а уже в последнюю очередь разбираемся с целыми частями.</p>
-                    
-                    <p style="font-size: 22px;">В примере были рассмотрены смешанные числа с одинаковыми знаменателями. Как правило, в заданиях ОГЭ даются разные знаменатели, они приводятся к общему по алгоритму, описанному выше.</p>
-                    
-                    <p style="font-size: 22px;"><strong>Умножать и делить смешанные числа можно только после того, как они будут переведены в неправильные дроби:</strong></p>
-                    
-                    <div style="text-align: center; font-size: 36px; margin: 20px 0;">
-                        <span style="display: inline-flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 48px;">2</span>
-                            <span class="fraction">
-                                <span class="top">3</span>
-                                <span class="bottom">7</span>
-                            </span>
-                        </span>
-                        <span style="margin: 0 20px;">=</span>
-                        <span class="fraction">
-                            <span class="top">2</span>
-                            <span class="bottom">1</span>
-                        </span>
-                        <span style="margin: 0 10px;">+</span>
-                        <span class="fraction">
-                            <span class="top">3</span>
-                            <span class="bottom">7</span>
-                        </span>
-                        <span style="margin: 0 10px;">=</span>
-                        <span class="fraction">
-                            <span class="top">14</span>
-                            <span class="bottom">7</span>
-                        </span>
-                        <span style="margin: 0 10px;">+</span>
-                        <span class="fraction">
-                            <span class="top">3</span>
-                            <span class="bottom">7</span>
-                        </span>
-                        <span style="margin: 0 10px;">=</span>
-                        <span class="fraction">
-                            <span class="top">17</span>
-                            <span class="bottom">7</span>
-                        </span>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 20px 0;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 48px; font-weight: 600;">2</span>
+                            <div class="fraction"><span class="top">3</span><span class="bottom">7</span></div>
+                        </div>
+                        <span class="equals">=</span>
+                        <div class="fraction"><span class="top">14</span><span class="bottom">7</span></div>
+                        <span class="operation">+</span>
+                        <div class="fraction"><span class="top">3</span><span class="bottom">7</span></div>
+                        <span class="equals">=</span>
+                        <div class="fraction"><span class="top">17</span><span class="bottom">7</span></div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Блок 7: Десятичные дроби -->
-            <div class="instruction-block">
-                <h3>Десятичные дроби</h3>
                 
-                <div class="instruction-text">
+                <!-- ========== ДЕСЯТИЧНЫЕ ДРОБИ ========== -->
+                <div class="text-block">
+                    <p><strong>Десятичные дроби</strong></p>
                     <p>Десятичными дробями называют обыкновенные дроби, у которых знаменателем является любая степень 10. Обычно, их записывают с помощью запятой, поэтому школьникам они очень нравятся, так как похожи на обычные двухзначные, трехзначные и др. целые числа. Однако, это сходство часто вводит учеников в заблуждение.</p>
-                    
-                    <p>Запятая отделяет целую часть от дробной. Соответственно даёт понять, в каком разряде находится та или иная цифра.</p>
-                    
+                    <p>Для начала определим, для чего ставится запятая:</p>
+                    <p><strong>Запятая отделяет целую часть от дробной. Соответственно даёт понять, в каком разряде находится та или иная цифра.</strong></p>
+                </div>
+                
+                <!-- ФОТОГРАФИЯ С РАЗРЯДАМИ ЧИСЛА -->
+                <div class="figure-card">
+                    <div class="figure-title">Разряды десятичной дроби</div>
+                    <img src="media/1000004812.jpg" alt="Разряды десятичной дроби" class="figure-img" onerror="this.style.display='none'">
+                    <div class="img-caption">Целая часть и дробная часть числа: тысячи, сотни, десятки, единицы, десятые, сотые, тысячные, десятитысячные</div>
+                </div>
+                
+                <div class="text-block">
                     <p>Что бы не перепутать порядки, при сложении и вычитании десятичных дробей в пятом классе учат правило <strong>«запятая под запятой»</strong>. То есть, десятичные дроби складываются и вычитаются столбиком, по обычным правилам, с единственной поправкой, что запятые в примере должны находиться друг над другом:</p>
                 </div>
                 
-                <div class="math-drawing">
-                    <div class="drawing-title">Сложение десятичных дробей:</div>
-                    
-                    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
-                        <div class="decimal-example">
-                            18,4 + 2,149 = 20,549
-                        </div>
-                        <div class="decimal-example" style="text-align: left;">
-                            18,400<br>
-                            + 2,149<br>
-                            <hr style="border: 2px solid #667eea; margin: 5px 0;">
-                            20,549
-                        </div>
+                <div class="figure-card">
+                    <div class="figure-title">Сложение десятичных дробей</div>
+                    <div style="font-family: monospace; font-size: 28px; text-align: center; margin: 20px 0;">
+                        18,400<br>
+                        + 2,149<br>
+                        <hr style="width: 150px; margin: 5px auto; border: 1px solid #667eea;">
+                        20,549
                     </div>
-                    
-                    <p style="font-size: 20px; margin-top: 20px;">И если числу не хватает цифр после запятой, то для удобства сложения или вычитания в конце ему «дорисовываются» нули.</p>
+                    <p>И если числу не хватает цифр после запятой, то для удобства сложения или вычитания в конце ему «дорисовываются» нули.</p>
                 </div>
                 
-                <div class="math-drawing">
-                    <div class="drawing-title">Умножение десятичных дробей:</div>
-                    
-                    <p style="font-size: 22px;">Умножать такие дроби ещё проще. Сначала забываем про запятые и умножаем числа, как обычные многозначные. А после про запятые нужно вспомнить и оставить в ответе столько же цифр после запятой, сколько было суммарно.</p>
-                    
-                    <div style="display: flex; flex-direction: column; align-items: center; gap: 30px; margin: 30px 0;">
-                        <div style="font-size: 32px;">43,2 × 52 = 2246,4</div>
-                        <div style="font-size: 32px;">2,45 × 4,6 = 11,27</div>
-                        
-                        <div class="decimal-example" style="text-align: left; font-size: 28px;">
-                            2,45<br>
-                            × 4,6<br>
-                            <hr style="border: 1px solid #667eea;">
-                            1470<br>
-                            980<br>
-                            <hr style="border: 2px solid #333;">
-                            11,270
+                <div class="text-block">
+                    <p>Умножать такие дроби ещё проще. Сначала забываем про запятые и умножаем числа, как обычные многозначные. А после про запятые нужно вспомнить и оставить в ответе столько же цифр после запятой, сколько было суммарно. Например:</p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Умножение десятичных дробей</div>
+                    <div style="text-align: center; font-size: 28px; margin: 20px 0;">
+                        43,2 × 52 = 2246,4
+                    </div>
+                    <div style="text-align: center; font-size: 28px; margin: 20px 0;">
+                        2,45 × 4,6 = 11,27
+                    </div>
+                    <div style="font-family: monospace; font-size: 24px; text-align: center;">
+                        2,45<br>
+                        × 4,6<br>
+                        <hr style="width: 100px; margin: 5px auto;">
+                        1470<br>
+                        980<br>
+                        <hr style="width: 100px; margin: 5px auto;">
+                        11,270
+                    </div>
+                    <p>Если в конце числа остаются нули, то писать их в ответ не надо.</p>
+                </div>
+                
+                <div class="text-block">
+                    <p>А теперь самое интересное — деление десятичных дробей. Дело в том, что на дробь делить никто не умеет. Всегда применяются какие-то хитрости, которые приводят нас либо к переворачиванию дробей, либо к делению на целое число.</p>
+                    <p>В данном случае, будем делить на целое число. Нам необходимо перенести запятую одновременно и у делимого, и у делителя так, чтобы делитель стал целым. Например:</p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Деление десятичных дробей</div>
+                    <div style="text-align: center; font-size: 32px; margin: 20px 0;">
+                        12,096 : 2,24 = 5,4
+                    </div>
+                    <p>Если знаков после запятой не хватает, то снова добавляем нули. Как только получился целый делитель, делим числа обычным столбиком:</p>
+                    <div style="display: flex; justify-content: center; margin: 20px 0;">
+                        <div style="font-family: monospace; font-size: 28px; text-align: left; line-height: 1.5;">
+                            <div style="margin-left: 50px;"></div>
+                    <img src="media/1000004814.jpg" alt="деление" style="width: 500px; height: auto;">
                         </div>
                     </div>
-                    
-                    <p style="font-size: 20px;">Если в конце числа остаются нули, то писать их в ответ не надо.</p>
+                    <p>Не забываем ставить запятую в ответе, когда переходим из области целых чисел.</p>
                 </div>
                 
-                <div class="math-drawing">
-                    <div class="drawing-title">Деление десятичных дробей:</div>
-                    
-                    <p style="font-size: 22px;">А теперь самое интересное – деление десятичных дробей. Дело в том, что на дробь делить никто не умеет. Всегда применяются какие-то хитрости, которые приводят нас либо к переворачиванию дробей, либо к делению на целое число.</p>
-                    
-                    <p style="font-size: 22px;">В данном случае, будем делить на целое число. Нам необходимо перенести запятую одновременно и у делимого, и у делителя так, чтобы делитель стал целым.</p>
-                    
-                    <div style="text-align: center; font-size: 36px; margin: 30px 0;">
-                        12,096 : 2,24 = 1209,6 : 224
-                    </div>
-                    
-                    <p style="font-size: 22px;">Если знаков после запятой не хватает, то снова добавляем нули. Как только получился целый делитель, делим числа обычным столбиком:</p>               
-                    <p style="font-size: 20px;">Не забываем ставить запятую в ответе, когда переходим из области целых чисел.</p>
-                </div>
-            </div>
-            
-            <!-- Блок 8: Порядок действий -->
-            <div class="instruction-block">
-                <h3>Порядок действий</h3>
-                
-                <div class="instruction-text">
-                    <p>Если в примере больше, чем одно, действие, то необходимо помнить о том, как правильно расставлять порядок действий.</p>
-                    
-                    <ul style="font-size: 22px; line-height: 2;">
-                        <li><strong>Умножение и деление</strong> - действия одного порядка, если их несколько в примере, то расставляем порядок действий в них слева направо.</li>
-                        <li><strong>Сложение и вычитание</strong> - также действия одного порядка. После того, как расставлены действия над умножением и делением, ставим слева направо действия над плюсами и минусами.</li>
+                <!-- ========== ПОРЯДОК ДЕЙСТВИЙ ========== -->
+                <div class="text-block">
+                    <p><strong>Порядок действий</strong></p>
+                    <p>Если в примере больше, чем одно действие, то необходимо помнить о том, как правильно расставлять порядок действий.</p>
+                    <ul class="step-list">
+                        <li><strong>Умножение и деление</strong> — действия одного порядка, если их несколько в примере, то расставляем порядок действий в них слева направо.</li>
+                        <li><strong>Сложение и вычитание</strong> — также действия одного порядка. После того, как расставлены действия над умножением и делением, ставим слева направо действия над плюсами и минусами.</li>
                         <li>Если в примере есть <strong>скобки</strong>, то предпочтения в расстановке действий отдаётся им.</li>
                     </ul>
                 </div>
                 
-                <div class="math-drawing">
-                    <div class="drawing-title">Пример со степенью:</div>
-                    
-                    <p style="font-size: 22px;">Иногда встречается такое действие, как степень. Тут нужно вспомнить, что степень показывает, сколько раз число будет умножено само на себя. А это приводит нас к тому, что мы уже знаем и умеем.</p>
-                    
-                    <div style="text-align: center; font-size: 32px; margin: 30px 0;">
-                        3² × 10³ + 5 × 10² = 3 × 3 × 10 × 10 × 10 + 5 × 10 × 10
-                    </div>
-                    
-                    <div style="text-align: center; font-size: 32px;">
-                        = 9 × 1000 + 5 × 100 = 9000 + 500 = 9500
-                    </div>
+                <div class="figure-card">
+                    <div class="figure-title">Пример со степенью</div>
+                    <div class="formula">3² × 10³ + 5 × 10² = 3×3×10×10×10 + 5×10×10</div>
+                    <div class="formula">= 9 × 1000 + 5 × 100 = 9000 + 500 = 9500</div>
+                    <p>Иногда встречается такое действие, как степень. Тут нужно вспомнить, что степень показывает, сколько раз число будет умножено само на себя.</p>
+                </div>
+                
+                <div class="highlight-block">
+                    <p><strong>Памятка по заданию №6:</strong></p>
+                    <ul class="step-list">
+                        <li>Дробь — это деление числителя на знаменателя</li>
+                        <li>Основное свойство: можно умножать или делить числитель и знаменатель на одно и то же число</li>
+                        <li>При сложении дробей — приводим к общему знаменателю</li>
+                        <li>Трёхэтажную дробь заменяем делением</li>
+                        <li>Смешанные числа переводим в неправильные дроби для умножения/деления</li>
+                        <li>При сложении/вычитании десятичных дробей — запятая под запятой</li>
+                        <li>При умножении десятичных дробей — считаем общее количество знаков после запятой</li>
+                        <li>При делении — переносим запятую, чтобы делитель стал целым</li>
+                        <li>Сначала действия в скобках, затем умножение/деление, затем сложение/вычитание</li>
+                    </ul>
                 </div>
             </div>
         </div>
         
-        <!-- Кнопка возврата на главную -->
         <div style="text-align: center;">
             <a href="index.html" class="back-button">← Вернуться на главную</a>
         </div>
     </main>
 
-    <!-- Кнопка для поднятия вверх -->
     <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
 
-    <!-- === МОДАЛЬНОЕ ОКНО СО СПРАВОЧНЫМИ МАТЕРИАЛАМИ === -->
     <div id="referenceModal" class="modal">
         <div class="modal-content">
             <span class="close-button" onclick="closeReference()">&times;</span>
-            <h2 class="ref-title">СПРАВОЧНЫЕ МАТЕРИАЛЫ ПО МАТЕМАТИКЕ</h2>
-            <img src="images/справочные материалы.jpg" alt="Справочные" style="width: 910px; height: auto;">
-    <!-- === СКРИПТЫ === -->
+            <h2 class="ref-title">СПРАВОЧНЫЕ МАТЕРИАЛЫ</h2>
+     <img src="images/справочные материалы.jpg" alt="Справочные" style="width: 910px; height: auto;">
+    </div>
+
     <script>
-        // Функция для открытия модального окна
         function openReference() {
             document.getElementById('referenceModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
-        
-        // Функция для закрытия модального окна
         function closeReference() {
             document.getElementById('referenceModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-        
-        // Закрытие по клику вне модального окна
-        window.onclick = function(event) {
-            var modal = document.getElementById('referenceModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-        
-        // Закрытие по клавише ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                var modal = document.getElementById('referenceModal');
-                if (modal.style.display === 'block') {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
+        window.onclick = function(e) {
+            let modal = document.getElementById('referenceModal');
+            if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+        };
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                let modal = document.getElementById('referenceModal');
+                if (modal.style.display === 'block') { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
             }
         });
-        
-        // Кнопка для поднятия вверх
         window.addEventListener('scroll', function() {
-            const backToTopBtn = document.getElementById('backToTopBtn');
-            if (window.scrollY > 400) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
+            let btn = document.getElementById('backToTopBtn');
+            if (window.scrollY > 400) btn.classList.add('show');
+            else btn.classList.remove('show');
         });
-        
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
     </script>
 </body>
 </html>
