@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ОГЭ Алгебра | Задание №14</title>
-    <!-- Подключаем внешний CSS файл -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Дополнительные стили для страницы задания */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         .instruction-section {
             background: white;
             border-radius: 30px;
@@ -29,7 +33,6 @@
             padding: 20px 0;
         }
         
-        /* Плавные текстовые блоки без столбиков */
         .text-block {
             background: #fafaff;
             border-radius: 24px;
@@ -38,12 +41,7 @@
             line-height: 1.7;
             font-size: 20px;
             color: #2c3e50;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
             border: 1px solid #eef2ff;
-        }
-        
-        .text-block p {
-            margin: 0;
         }
         
         .highlight-block {
@@ -56,24 +54,40 @@
             color: #7b5e2c;
         }
         
-        .example-card {
-            background: white;
+        .figure-card {
+            background: #fefefe;
             border-radius: 24px;
-            padding: 28px 32px;
-            margin: 28px 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
             border: 1px solid #e9ecef;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         
-        .example-card p {
-            font-size: 20px;
-            line-height: 1.6;
-            color: #1e293b;
-            margin: 12px 0;
+        .figure-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .figure-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .img-caption {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
         }
         
         .formula {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 600;
             color: #667eea;
             text-align: center;
@@ -82,42 +96,6 @@
             border-radius: 20px;
             font-family: 'Courier New', monospace;
             margin: 20px 0;
-            letter-spacing: 1px;
-        }
-        
-        .math-card {
-            background: #fefce8;
-            border-radius: 24px;
-            padding: 28px 32px;
-            margin: 28px 0;
-            text-align: center;
-            border: 1px solid #fef3c7;
-        }
-        
-        .math-card .big-number {
-            font-size: 32px;
-            font-weight: 700;
-            color: #667eea;
-            font-family: monospace;
-            margin: 10px 0;
-        }
-        
-        .sequence-row {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin: 28px 0;
-        }
-        
-        .sequence-badge {
-            background: #eef2ff;
-            color: #4f46e5;
-            padding: 12px 22px;
-            border-radius: 40px;
-            font-size: 20px;
-            font-weight: 500;
-            transition: all 0.2s;
         }
         
         .step-list {
@@ -144,38 +122,6 @@
             top: 8px;
         }
         
-        .formula-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 32px 0;
-            justify-content: center;
-        }
-        
-        .formula-card {
-            background: #f8fafc;
-            border-radius: 24px;
-            padding: 20px 28px;
-            text-align: center;
-            flex: 1;
-            min-width: 240px;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .formula-card p {
-            margin: 8px 0;
-            font-size: 18px;
-            color: #475569;
-        }
-        
-        .formula-card .formula-text {
-            font-size: 22px;
-            font-weight: 600;
-            color: #667eea;
-            font-family: monospace;
-            margin-top: 12px;
-        }
-        
         .back-button {
             margin-top: 40px;
             padding: 14px 36px;
@@ -195,7 +141,6 @@
         .back-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(102,126,234,0.15);
-            border-color: #cbd5e1;
         }
         
         .back-to-top {
@@ -213,7 +158,6 @@
             align-items: center;
             justify-content: center;
             font-size: 32px;
-            font-weight: bold;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: all 0.2s ease;
             z-index: 999;
@@ -235,16 +179,8 @@
             .instruction-section {
                 padding: 24px;
             }
-            .text-block, .example-card, .math-card {
-                padding: 20px;
-            }
-            .formula {
-                font-size: 22px;
-            }
-            .back-to-top {
-                width: 52px;
-                height: 52px;
-                font-size: 28px;
+            .figure-img {
+                width: 100%;
             }
         }
     </style>
@@ -259,124 +195,233 @@
         <h1 class="main-title">Задание №14</h1>
         
         <div class="instruction-section">
-            <h2 class="instruction-title">Инструкция к выполнению задания №14</h2>
+            <h2 class="instruction-title">Инструкция к выполнению</h2>
             
             <div class="instruction-block">
+                <!-- ========== НАЧАЛО ТЕКСТА ИЗ ДОКУМЕНТА ========== -->
                 <div class="text-block">
-                    <p>90% заданий на прогрессии настолько интуитивно простые, что не требуют знаний теории и тем более владения формулами. Они решаются простым перебором значений, но снова стоит предупредить: читаем задания крайне внимательно и маленькими частями.</p>
-                </div>
-                
-                <div class="text-block">
-                    <p><strong>Прогрессия</strong> — это последовательность чисел, где числа изменяются по какому-нибудь математическому закону. Например:</p>
-                </div>
-                
-                <div class="sequence-row">
-                    <span class="sequence-badge">1, 2, 3, 4, 5, 6…</span>
-                    <span class="sequence-badge">6, 5, 4, 3, 2, 1…</span>
-                    <span class="sequence-badge">2, 4, 8, 16, 32…</span>
+                    <p>90% заданий на прогрессии на столько интуитивно простые, что не требуют знаний теории и тем более владения формулами. Они решаются простым перебором значений, но снова стоит предупредить: читаем задания крайне внимательно и маленькими частями.</p>
                 </div>
                 
                 <div class="text-block">
-                    <p>Каждое число в прогрессии имеет свой порядковый номер: <strong>2</strong> — первый член, <strong>4</strong> — второй, <strong>8</strong> — третий и так далее.</p>
+                    <p><strong>Начнём с терминологии.</strong> Прогрессия — это последовательность чисел, где числа изменяются по какому-нибудь математическому закону. Например:</p>
                 </div>
                 
-                <div class="highlight-block">
-                    <p>📌 Вспомним задачи из 2 класса:</p>
+                <div class="figure-card">
+                    <div class="figure-title">Примеры прогрессий</div>
+                    <div style="font-size: 28px; margin: 15px 0;">
+                        1, 2, 3, 4, 5, 6...
+                    </div>
+                    <p>- каждое следующее число на единицу больше предыдущего</p>
+                    <div style="font-size: 28px; margin: 15px 0;">
+                        6, 5, 4, 3, 2, 1...
+                    </div>
+                    <p>- каждое следующее число на единицу меньше предыдущего</p>
+                    <div style="font-size: 28px; margin: 15px 0;">
+                        2, 4, 8, 16, 32...
+                    </div>
+                    <p>- каждое следующее число в два раза больше предыдущего</p>
+                </div>
+                
+                <div class="text-block">
+                    <p>Причём каждое число в прогрессии имеет свой порядковый номер:</p>
+                    <p><strong>2</strong> - первый член прогрессии, <strong>4</strong> - второй член прогрессии, <strong>8</strong> - третий член прогрессии и т.д.</p>
+                </div>
+                
+                <div class="text-block">
+                    <p>Давайте ещё вспомним математику второго класса, когда только начиналось знакомство с простейшими задачами. Они были такие:</p>
                     <p>1) На одном кусте 5 роз, а на другом <strong>на 3 розы больше</strong>. Сколько роз на втором кусте?</p>
                     <p>2) На одном кусте 5 роз, а на другом <strong>в 2 раза больше</strong>. Сколько роз на втором кусте?</p>
-                    <p>Разница — в предлогах: <strong>«на»</strong> → сложение/вычитание, <strong>«в»</strong> → умножение/деление.</p>
-                    <p>Так же и с прогрессиями: арифметическая меняется «на», геометрическая — «во» сколько-то раз.</p>
-                </div>
-                
-                <div class="example-card">
-                    <p><strong>📌 Пример из ОГЭ</strong></p>
-                    <p>В амфитеатре 15 рядов. В первом ряду 28 мест, в каждом следующем на 3 места больше. Сколько мест в двенадцатом ряду?</p>
-                </div>
-                
-                <div class="text-block">
-                    <p>Читаем по частям:</p>
-                    <ul class="step-list">
-                        <li>Всего 15 рядов</li>
-                        <li>Первый ряд — 28 мест</li>
-                        <li>Каждый следующий на 3 больше</li>
-                        <li>Нужно найти 12-й ряд</li>
-                    </ul>
-                    <p>Первый член a₁ = 28, разность d = +3. Это арифметическая прогрессия.</p>
-                </div>
-                
-                <div class="math-card">
-                    <p><strong>Решаем перебором</strong></p>
-                    <div>1 ряд → 28 мест</div>
-                    <div>2 ряд → 31 место</div>
-                    <div>3 ряд → 34 места</div>
-                    <div>…</div>
-                    <div class="big-number">12 ряд → 61 место</div>
-                </div>
-                
-                <div class="text-block">
-                    <p><strong>Или по формуле</strong> (из справочных материалов):</p>
-                    <div class="formula">aₙ = a₁ + d·(n − 1)</div>
-                    <div class="formula">a₁₂ = 28 + 3·(12 − 1) = 61</div>
-                    <p>✅ Ответ: <strong>61 место</strong></p>
-                </div>
-                
-                <div class="example-card">
-                    <p><strong>📌 Ещё один пример</strong></p>
-                    <p>Вещество охлаждали 10 минут. Каждую минуту температура уменьшалась на 7°C. Начальная температура –13°C. Какая температура через 4 минуты?</p>
-                </div>
-                
-                <div class="text-block">
-                    <p>Начинаем с нулевого момента:</p>
-                    <ul class="step-list">
-                        <li>0 мин → –13°</li>
-                        <li>1 мин → –20°</li>
-                        <li>2 мин → –27°</li>
-                        <li>3 мин → –34°</li>
-                        <li>4 мин → –41°</li>
-                    </ul>
-                    <p>Через 4 минуты температура –41°C.</p>
-                </div>
-                
-                <div class="example-card">
-                    <p><strong>📌 Задача на сумму</strong></p>
-                    <p>Митя начинает с 0 очков. После 1-й минуты +2 очка, после 2-й +4, после 3-й +8 (удваиваются). Нужно набрать не менее 8000 очков. Через сколько минут перейдёт на следующий уровень?</p>
-                </div>
-                
-                <div class="text-block">
-                    <p>Это геометрическая прогрессия: b₁ = 2, q = 2.</p>
-                    <p>Считаем сумму: 2 + 4 + 8 + 16 + … пока не наберём 8000. Быстро перебираем:</p>
-                    <ul class="step-list">
-                        <li>1 мин → 2</li>
-                        <li>2 мин → 6</li>
-                        <li>3 мин → 14</li>
-                        <li>4 мин → 30</li>
-                        <li>5 мин → 62</li>
-                        <li>6 мин → 126</li>
-                        <li>7 мин → 254</li>
-                        <li>8 мин → 510</li>
-                        <li>9 мин → 1022</li>
-                        <li>10 мин → 2046</li>
-                        <li>11 мин → 4094</li>
-                        <li>12 мин → 8190</li>
-                    </ul>
-                    <p>✅ Ответ: <strong>через 12 минут</strong></p>
-                </div>
-                
-                <div class="formula-grid">
-                    <div class="formula-card">
-                        <p>Арифметическая прогрессия</p>
-                        <div class="formula-text">aₙ = a₁ + d·(n−1)</div>
-                        <div class="formula-text">Sₙ = (a₁+aₙ)·n/2</div>
-                    </div>
-                    <div class="formula-card">
-                        <p>Геометрическая прогрессия</p>
-                        <div class="formula-text">bₙ = b₁·qⁿ⁻¹</div>
-                        <div class="formula-text">Sₙ = (qⁿ−1)·b₁/(q−1)</div>
-                    </div>
+                    <p>Уже поняли в чём разница? — <strong>В предлогах!</strong></p>
                 </div>
                 
                 <div class="highlight-block">
-                    <p>📌 <strong>Важно</strong>: предлог «на» — арифметическая прогрессия, предлог «в» — геометрическая. Формулы всегда в справочных материалах.</p>
+                    <p><strong>❗ В математике предлог «на» означает сложение и вычитание, а предлог «в» — умножение и деление.</strong></p>
+                </div>
+                
+                <div class="text-block">
+                    <p>То есть, в первой задаче, мы будем к 5 прибавлять 3, во второй задаче 5 умножать на 2.</p>
+                    <p>В этом же заключается разница между арифметической и геометрической прогрессией:</p>
+                </div>
+                
+                <div class="highlight-block">
+                    <p><strong>Члены арифметической прогрессии увеличиваются или уменьшаются «на» какое-то числовое значение, геометрической — изменяются «во» сколько-то раз.</strong></p>
+                </div>
+                
+                <div class="text-block">
+                    <p><strong>Теперь рассмотрим пример из ОГЭ:</strong></p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Пример: амфитеатр</div>
+                    <p>В амфитеатре 15 рядов. В первом ряду 28 мест, а в каждом следующем на 3 места больше, чем в предыдущем. Сколько мест в двенадцатом ряду амфитеатра?</p>
+                </div>
+                
+                <div class="text-block">
+                    <p>Как мы говорили в 10 и 12 заданиях, читаем задачу по частям:</p>
+                    <ul class="step-list">
+                        <li>В амфитеатре 15 рядов</li>
+                        <li>В первом ряду 28 мест</li>
+                        <li>В каждом следующем на 3 места больше, чем в предыдущем</li>
+                        <li>Сколько мест в 12 ряду амфитеатра?</li>
+                    </ul>
+                </div>
+                
+                <div class="text-block">
+                    <p>Каждый кусочек обдумываем и анализируем отдельно.</p>
+                    <p>Скорее всего, уже стало понятно, что первое предложение не нужно для решения. Второе и третье — описывают последовательность: начинается она с числа 28 (первый член последовательности a₁ = 28), каждое следующее число увеличивается на 3 (разность d = +3). Кстати, предлог «на» говорит о том, что перед нами <strong>арифметическая прогрессия</strong>, а в скобках указаны термины и обозначения. Так как прогрессия задаётся математическим законом, значит будут формулы (которые есть в справочных материалах).</p>
+                </div>
+                
+                <div class="text-block">
+                    <p>Перед нами встаёт выбор: решить по формулам, либо к 28 прибавлять 3, пока не доберёмся до 12 ряда.</p>
+                    <p>Последний вариант решения явно понятней и предпочтительней. Главное, не запутаться в решении. Если Вы выбрали этот путь, распишите решение подробно, чтобы избежать ошибок:</p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Решение перебором</div>
+                    <div style="font-size: 24px; line-height: 2;">
+                        1 ряд – 28 мест<br>
+                        2 ряд – 31 место<br>
+                        3 ряд – 34 места<br>
+                        ...<br>
+                        12 ряд – 61 место
+                    </div>
+                    <p><strong>✅ Ответ: 61 место</strong></p>
+                </div>
+                
+                <div class="text-block">
+                    <p>Если Вы захотели решать с помощью формул, то ищем в справочных материалах следующую:</p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Формулы прогрессий</div>
+                    <div class="formula">aₙ = a₁ + d(n - 1)</div>
+                    <div class="formula">Sₙ = ((a₁ + aₙ) · n) / 2</div>
+                    <div class="formula">bₙ = b₁ · qⁿ⁻¹</div>
+                    <div class="formula">Sₙ = ((qⁿ - 1) · b₁) / (q - 1)</div>
+                </div>
+                
+                <div class="text-block">
+                    <p>Во всех этих формулах буква n обозначает порядковый номер члена прогрессии. В нашей задаче – это номер ряда. Нам нужно узнать, сколько мест находится в двенадцатом ряду, поэтому везде вместо переменной n пишем 12. Выше было указано, что a₁ = 28, d = +3. Подставим всё в формулу:</p>
+                    <div class="formula">a₁₂ = 28 + 3 × (12 - 1) = 61</div>
+                    <p>Это решение короче, исключает ошибки из-за невнимательности, но надо понимать, что и куда подставлять.</p>
+                </div>
+                
+                <div class="text-block">
+                    <p><strong>Рассмотрим ещё один пример:</strong></p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Пример: охлаждение вещества</div>
+                    <p>При проведении опыта вещество равномерно охлаждали в течение 10 минут. При этом каждую минуту температура вещества уменьшалась на 7° С. Найдите температуру вещества (в градусах Цельсия) через 4 минуты после начала проведения опыта, если его начальная температура составляла –13° С.</p>
+                </div>
+                
+                <div class="text-block">
+                    <p>Здесь важно запомнить, если в задаче попадается опыт, то начинаем его с нулевого момента времени (как при использовании секундомера).</p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Решение</div>
+                    <div style="font-size: 24px; line-height: 2;">
+                        В 0 минут было -13° (это, кстати, первый член прогрессии)<br>
+                        Прошла 1 минута — стало -17°<br>
+                        Прошло 2 минуты — -21°<br>
+                        Прошло 3 минуты — -24°<br>
+                        Прошло 4 минуты — -27° (а это пятый член прогрессии)
+                    </div>
+                </div>
+                
+                <div class="text-block">
+                    <p>А теперь зададим наводящие вопросы для тех, кто хочет попробовать решить с помощью формул: <strong>Какая прогрессия дана в задаче? Чему равен первый член прогрессии? Чему равна разность? Какой член прогрессии надо найти?</strong></p>
+                </div>
+                
+                <!-- ========== ДОБАВЛЕННЫЙ МАТЕРИАЛ ========== -->
+                <div class="text-block">
+                    <p><strong>Следующий пример:</strong></p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Пример: мячик</div>
+                    <p>Каучуковый мячик с силой бросили на асфальт. Отскочив, мячик подпрыгнул на 4,8 м, а при каждом следующем прыжке он поднимался на высоту в два раза меньше предыдущей. При каком по счёту прыжке мячик в первый раз не достигнет высоты 10 см?</p>
+                </div>
+                
+                <div class="text-block">
+                    <p>Обратим внимание на части:</p>
+                    <ul class="step-list">
+                        <li>Отскочив, мячик подпрыгнул на 4,8 м</li>
+                        <li>При каждом следующем прыжке он поднимался на высоту в два раза меньше предыдущей</li>
+                        <li>При каком по счёту прыжке мячик в первый раз не достигнет 10 см?</li>
+                    </ul>
+                    <p>Ещё один хороший совет – <strong>визуализировать задачу</strong>. Проще говоря, представить, нарисовать схему и т.д.</p>
+                    <p>Дружно представляем, как мячик кидают об асфальт:</p>
+                </div>
+                
+                <!-- ФОТОГРАФИЯ МЯЧИКА (если есть, вставьте media/mячик.png) -->
+                <div class="figure-card">
+                    <div class="figure-title">Визуализация: прыжки мячика</div>
+                    <img src="media/mячик.png" alt="Мячик отскакивает от асфальта" class="figure-img" onerror="this.style.display='none'">
+                    <div class="img-caption">Мячик отскакивает от асфальта, высота прыжка уменьшается в два раза</div>
+                </div>
+                
+                <div class="text-block">
+                    <p>Записываем последовательность:</p>
+                    <ul class="step-list">
+                        <li>После 1 отскока – высота 4,8 м</li>
+                        <li>После 2 отскока – высота 2,4 м (из условия задачи в два раза меньше)</li>
+                        <li>После 3 отскока – высота 1,2 м</li>
+                        <li>После 4 отскока – высота 0,6 м = 60 см</li>
+                        <li>На данном этапе, для удобства, можно высоту перевести в сантиметры</li>
+                        <li>После 5 отскока – высота 30 см</li>
+                        <li>После 6 отскока – высота 15 см</li>
+                        <li>После 7 отскока – 7,5 см, что меньше 10 см</li>
+                    </ul>
+                    <p><strong>✅ Ответ: 7</strong></p>
+                </div>
+                
+                <!-- Пример с Митей (добавленный) -->
+                <div class="text-block">
+                    <p><strong>Следующий пример:</strong></p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Пример: игра Мити</div>
+                    <p>Митя играет в компьютерную игру. Он начинает с 0 очков, а для перехода на следующий уровень ему нужно набрать не менее 8 000 очков. После первой минуты игры добавляется 2 очка, после второй – 4 очка, после третьей – 8 очков и так далее. Таким образом, после каждой следующей минуты игры количество добавляемых очков удваивается. Через сколько минут Митя перейдет на следующий уровень?</p>
+                </div>
+                
+                <div class="text-block">
+                    <p>Давайте определим, какая перед нами прогрессия? По окончании первой минуты Митя получает 2 очка, второй – 4, третьей – 8. Числа, как мы видим, «удваиваются», значит это — <strong>геометрическая прогрессия</strong>:</p>
+                    <div class="formula">b₁ = 2, b₂ = 4, b₃ = 8, q = 2</div>
+                    <p>Очки после каждой сыгранной минуты суммируются. Например: после второй минуты на счету игрока будет 6 очков, а после третьей минуты — 14.</p>
+                    <p>В этой задаче так же можно считать вручную до 8000 очков. Кажется, что это будет очень долго, так как начинаем счёт с 2, но на самом деле числа будут увеличиваться достаточно быстро.</p>
+                </div>
+                
+                <div class="figure-card">
+                    <div class="figure-title">Подсчёт очков</div>
+                    <div style="font-size: 22px; line-height: 1.8; text-align: left; display: inline-block;">
+                        1 мин → 2 очка<br>
+                        2 мин → 2+4 = 6 очков<br>
+                        3 мин → 6+8 = 14 очков<br>
+                        4 мин → 14+16 = 30 очков<br>
+                        5 мин → 30+32 = 62 очка<br>
+                        6 мин → 62+64 = 126 очков<br>
+                        7 мин → 126+128 = 254 очка<br>
+                        8 мин → 254+256 = 510 очков<br>
+                        9 мин → 510+512 = 1022 очка<br>
+                        10 мин → 1022+1024 = 2046 очков<br>
+                        11 мин → 2046+2048 = 4094 очка<br>
+                        12 мин → 4094+4096 = 8190 очков
+                    </div>
+                    <p><strong>✅ Ответ: через 12 минут</strong></p>
+                </div>
+                
+                <div class="highlight-block">
+                    <p><strong>📌 Памятка по прогрессиям:</strong></p>
+                    <ul class="step-list">
+                        <li><strong>Арифметическая прогрессия</strong> — изменяется «на» (сложение/вычитание)</li>
+                        <li><strong>Геометрическая прогрессия</strong> — изменяется «во» (умножение/деление)</li>
+                        <li>Читаем задачу маленькими частями и визуализируем</li>
+                        <li>Можно решать простым перебором — это часто быстрее</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -388,12 +433,13 @@
 
     <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
 
-    <!-- Модальное окно -->
     <div id="referenceModal" class="modal">
         <div class="modal-content">
             <span class="close-button" onclick="closeReference()">&times;</span>
-            <h2 class="ref-title">СПРАВОЧНЫЕ МАТЕРИАЛЫ ПО МАТЕМАТИКЕ</h2>
-            <img src="images/справочные материалы 6.jpg" alt="Справочные" style="width: 910px; height: auto;">
+            <h2 class="ref-title">СПРАВОЧНЫЕ МАТЕРИАЛЫ</h2>
+           <img src="images/справочные материалы 6.jpg" alt="Справочные" style="width: 910px; height: auto;">
+    </div>
+
     <script>
         function openReference() {
             document.getElementById('referenceModal').style.display = 'block';
@@ -403,31 +449,22 @@
             document.getElementById('referenceModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-        window.onclick = function(event) {
+        window.onclick = function(e) {
             let modal = document.getElementById('referenceModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+            if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
         };
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 let modal = document.getElementById('referenceModal');
-                if (modal.style.display === 'block') {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
+                if (modal.style.display === 'block') { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
             }
         });
-        
         window.addEventListener('scroll', function() {
-            const btn = document.getElementById('backToTopBtn');
+            let btn = document.getElementById('backToTopBtn');
             if (window.scrollY > 400) btn.classList.add('show');
             else btn.classList.remove('show');
         });
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
     </script>
 </body>
 </html>
